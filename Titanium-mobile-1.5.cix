@@ -3378,6 +3378,8 @@
                     <scope doc="Invoke a Yahoo YQL query." ilk="function" name="yql" returns="void" signature="yql(yql) -&gt; titanium" />
                 </scope>
             </scope>
+            <scope classrefs="Titanium" ilk="class" name="Ti">
+            </scope>
         </scope>
     </file>
 </codeintel>
