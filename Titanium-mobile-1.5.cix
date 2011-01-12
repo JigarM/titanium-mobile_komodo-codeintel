@@ -1379,6 +1379,7 @@
                     <variable citdl="Number" name="TEXT_VERTICAL_ALIGNMENT_TOP" />
                     <variable citdl="Number" name="UNKNOWN" />
                     <variable citdl="Number" name="UPSIDE_PORTRAIT" />
+                    <variable citdl="Object" name="currentWindow" />
                     <!-- Titanium.UI.2DMatrix object -->
                     <scope ilk="class" name="2DMatrix" doc="The 2DMatrix is created by Titanium.UI.create2DMatrix.  The 2D Matrix is an object for holding values for an affine transformation matrix. A 2D matrix is used to rotate, scale, translate, or skew the objects in a two-dimensional space. A 2D matrix is represented by a 3 by 3 matrix. Because the third column is always (0,0,1), the data structure contains values for only the first two columns. Platforms = [android, iphone, ipad]" returns="Object">
                         <scope doc="Add an event listener for the instance to receive view triggered events." ilk="function" name="addEventListener" returns="void" signature="addEventListener(name, callback) -&gt; titanium" />
