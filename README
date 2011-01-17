@@ -1,1 +1,1 @@
-Titanium Desktop coming soon!
+Added Titanium Desktop. Make sure if you have both cix files installed in Komodo to not have them both checked at the same time as they share the namespace Titanium (amongst others). So it will cause some random amounts of damage I'm sure.
