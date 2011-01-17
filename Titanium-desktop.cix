@@ -1,0 +1,830 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codeintel description="Titanium Desktop API 1.1" name="Titanium_Desktop" version="2.0">
+    <file lang="JavaScript" path="">
+        <scope ilk="blob" lang="JavaScript" name="titanium">
+            <!-- Base Titanium module -->
+            <scope ilk="class" name="Titanium" doc="The top level Titanium module.">
+                <scope doc="Return the current platform, usually one of 'osx', 'win32', or 'linux'." ilk="function" name="getPlatform" returns="String" signature="getPlatform() -&gt; titanium" />
+                <scope doc="Return the Titanium runtime version." ilk="function" name="getVersion" returns="String" signature="getVersion() -&gt; titanium" />
+                <scope doc="Evaluates a URL or list of URLs in the current JS context, and returns their results (if any)." ilk="function" name="include" returns="Object or Array" signature="include(files) -&gt; titanium" />
+                <variable citdl="String" name="ALL" />
+                <variable citdl="String" name="APP_EXIT" />
+                <variable citdl="String" name="CLOSE" />
+                <variable citdl="String" name="CLOSED" />
+                <variable citdl="String" name="CREATE" />
+                <variable citdl="String" name="EXIT" />
+                <variable citdl="String" name="FOCUSED" />
+                <variable citdl="String" name="FULLSCREENED" />
+                <variable citdl="String" name="HIDDEN" />
+                <variable citdl="String" name="HTTP_ABORT" />
+                <variable citdl="String" name="HTTP_DATA_RECEIVED" />
+                <variable citdl="String" name="HTTP_DATA_SENT" />
+                <variable citdl="String" name="HTTP_DONE" />
+                <variable citdl="String" name="HTTP_REDIRECT" />
+                <variable citdl="String" name="HTTP_STATE_CHANGED" />
+                <variable citdl="String" name="HTTP_TIMEOUT" />
+                <variable citdl="String" name="MAXIMIZED" />
+                <variable citdl="String" name="MINIMIZED" />
+                <variable citdl="String" name="MOVED" />
+                <variable citdl="String" name="OPEN" />
+                <variable citdl="String" name="OPENED" />
+                <variable citdl="String" name="OPEN_REQUEST" />
+                <variable citdl="String" name="PAGE_INITIALIZED" />
+                <variable citdl="String" name="PAGE_LOADED" />
+                <variable citdl="String" name="READ" />
+                <variable citdl="String" name="RESIZED" />
+                <variable citdl="String" name="SHOWN" />
+                <variable citdl="String" name="UNFOCUSED" />
+                <variable citdl="String" name="UNFULLSCREENED" />
+                <!-- Titanium.API module -->
+                <scope ilk="class" name="API" doc="A module for holding core Titanium functionality." returns="Object">
+                    <scope doc="Register a root event listener. Event listeners registered using this function will receive all events from Titanium." ilk="function" name="addEventListener" returns="Number" signature="addEventListener(eventName, callback) -&gt; titanium" />
+                    <scope doc="Create a Kroll Bytes object given a String. A Bytes object is a generic way of holding a String of bytes." ilk="function" name="createBytes" returns="Titanium.Bytes" signature="createBytes(contents) -&gt; titanium" />
+                    <scope doc="A constructor for API.Dependency objects." ilk="function" name="createDependency" returns="Titanium.API.Dependency" signature="createDependency(type, name, version, requirement) -&gt; titanium" />
+                    <scope doc="Create a Kroll list given an optional JavaScript array. This method is mainly used for testing." ilk="function" name="createKList" returns="Array" signature="createKList(toWrap) -&gt; titanium" />
+                    <scope doc="Create a Kroll method given an existing JavaScript Function. This method is mainly used for testing." ilk="function" name="createKMethod" returns="Function" signature="createKMethod(toWrap) -&gt; titanium" />
+                    <scope doc="Create a Kroll object given an existing JavaScript Object. This method is mainly used for testing." ilk="function" name="createKObject" returns="Object" signature="createKObject(toWrap) -&gt; titanium" />
+                    <scope doc="Log a statement with CRITICAL severity. The severity levels in order from least severe to most severe are: TRACE, DEBUG, INFO, NOTICE, WARN, ERROR, CRITICAL, FATAL." ilk="function" name="critical" returns="void" signature="critical(statement) -&gt; titanium" />
+                    <scope doc="Log a statement with DEBUG severity. The severity levels in order from least severe to most severe are: TRACE, DEBUG, INFO, NOTICE, WARN, ERROR, CRITICAL, FATAL." ilk="function" name="debug" returns="void" signature="debug(statement) -&gt; titanium" />
+                    <scope doc="Log a statement with ERROR severity. The severity levels in order from least severe to most severe are: TRACE, DEBUG, INFO, NOTICE, WARN, ERROR, CRITICAL, FATAL." ilk="function" name="error" returns="void" signature="error(statement) -&gt; titanium" />
+                    <scope doc="Log a statement with FATAL severity. The severity levels in order from least severe to most severe are: TRACE, DEBUG, INFO, NOTICE, WARN, ERROR, CRITICAL, FATAL." ilk="function" name="fatal" returns="void" signature="fatal(statement) -&gt; titanium" />
+                    <scope doc="Fire an event to the top-level event listener." ilk="function" name="fireEvent" returns="void" signature="fireEvent(event) -&gt; titanium" />
+                    <scope doc="Get an attribute in the global object." ilk="function" name="get" returns="Any" signature="get(key) -&gt; titanium" />
+                    <scope doc="Get the currently running application. This application will should have all of its dependencies resolved." ilk="function" name="getApplication" returns="Titanium.API.Application" signature="getApplication() -&gt; titanium" />
+                    <scope doc="Get a list of the paths on which Titanium searches for installed components. This does not include paths of bundled components." ilk="function" name="getComponentSearchPaths" returns="Array" signature="getComponentSearchPaths() -&gt; titanium" />
+                    <scope doc="Get the system environment object, which can be queried and updated just by accessing or setting its properties." ilk="function" name="getEnvironment" returns="Titanium.API.Environment" signature="getEnvironment() -&gt; titanium" />
+                    <scope doc="Get a list of the currently installed Titanium components. An installed component is one that has been found on the list of paths returned by Titanium.API.getComponentSearchPaths. This list does not include bundled components." ilk="function" name="getInstalledComponents" returns="Array" signature="getInstalledComponents() -&gt; titanium" />
+                    <scope doc="Get a list of the currently installed Titanium Mobile SDK components. An installed component is one that has been found on the list of paths returned by Titanium.API.getComponentSearchPaths. This list does not include bundled components." ilk="function" name="getInstalledMobileSDKs" returns="Array" signature="getInstalledMobileSDKs() -&gt; titanium" />
+                    <scope doc="Get a list of the currently installed Titanium module components. An installed component is one that has been found on the list of paths returned by Titanium.API.getComponentSearchPaths. This list does not include bundled components." ilk="function" name="getInstalledModules" returns="Array" signature="getInstalledModules() -&gt; titanium" />
+                    <scope doc="Get a list of the currently installed Titanium runtime components. An installed component is one that has been found on the list of paths returned by Titanium.API.getComponentSearchPaths. This list does not include bundled components." ilk="function" name="getInstalledRuntimes" returns="Array" signature="getInstalledRuntimes() -&gt; titanium" />
+                    <scope doc="Get a list of the currently installed Titanium SDK components. An installed component is one that has been found on the list of paths returned by Titanium.API.getComponentSearchPaths. This list does not include bundled components." ilk="function" name="getInstalledSDKs" returns="Array" signature="getInstalledSDKs() -&gt; titanium" />
+                    <scope doc="Get the log level threshold of the Titanium logger. The logger will log statements with this severity or one that is more severe. The severity levels in order from least severe to most severe are: 1. TRACE, 2. DEBUG, 3. INFO, 4. NOTICE, 5. WARN, 6. ERROR, 7. CRITICAL, 8. FATAL." ilk="function" name="getLogLevel" returns="Number" signature="getLogLevel() -&gt; titanium" />
+                    <scope doc="Log a statement with INFO severity. The severity levels in order from least severe to most severe are: TRACE, DEBUG, INFO, NOTICE, WARN, ERROR, CRITICAL, FATAL." ilk="function" name="info" returns="void" signature="info(statement) -&gt; titanium" />
+                    <scope doc="Invoke the installer to find and install a list of dependencies. When the installer is finished running, it will call the given callback. The only way to determine whether or not the installation was successful at this point is to try to resolve the dependencies that were passed to the installer. Currently the installer only supports Titanium.API.EQ dependencies." ilk="function" name="installDependencies" returns="void" signature="installDependencies(dependencies, callback) -&gt; titanium" />
+                    <scope doc="Log a statement with a given severity level. The severity levels are defined as constants on the API module. In order from least severe to most severe, they are: TRACE, DEBUG, INFO, NOTICE, WARN, ERROR, CRITICAL, FATAL." ilk="function" name="log" returns="void" signature="log(type, statement) -&gt; titanium" />
+                    <scope doc="Log a statement with NOTICE severity. The severity levels in order from least severe to most severe are: TRACE, DEBUG, INFO, NOTICE, WARN, ERROR, CRITICAL, FATAL." ilk="function" name="notice" returns="void" signature="notice(statement) -&gt; titanium" />
+                    <scope doc="Print a String to stdout without a trailing newline." ilk="function" name="print" returns="void" signature="print(data) -&gt; titanium" />
+                    <scope doc="Read an application manifest at a given path and return an Titanium.API.Application object representing the application." ilk="function" name="readApplicationManifest" returns="Titanium.API.Application" signature="readApplicationManifest(manifestPath, applicationPath) -&gt; titanium" />
+                    <scope doc="Remove a root event listener. If no listener with the given id or funtion is registered for this object, the call will do nothing." ilk="function" name="removeEventListener" returns="void" signature="removeEventListener(id) -&gt; titanium" />
+                    <scope doc="Execute the method asynchronously on the main thread. This should be used when attempting to run JavaScript methods from non-JavaScript threads. This method blocks until the function finishes executing and returns the return value of the method passed." ilk="function" name="runOnMainThread" returns="Any" signature="runOnMainThread(method, ...) -&gt; titanium" />
+                    <scope doc="Execute the method asynchronously on the main thread. This should be used when attempting to run JavaScript methods from non-JavaScript threads. This method does not wait for the method to complete and returns immediately." ilk="function" name="runOnMainThreadAsync" returns="void" signature="runOnMainThreadAsync(method, ...) -&gt; titanium" />
+                    <scope doc="Set an attribute in the global object." ilk="function" name="set" returns="void" signature="set(key, value) -&gt; titanium" />
+                    <scope doc="Set the log level threshold of the Titanium logger. The logger will log statements with this severity or one that is more severe. The severity levels in order from least severe to most severe are: 1. TRACE, 2. DEBUG, 3. INFO, 4. NOTICE, 5. WARN, 6. ERROR, 7. CRITICAL, 8. FATAL." ilk="function" name="setLogLevel" returns="void" signature="setLogLevel(level) -&gt; titanium" />
+                    <scope doc="Log a statement with TRACE severity. The severity levels in order from least severe to most severe are: TRACE, DEBUG, INFO, NOTICE, WARN, ERROR, CRITICAL, FATAL." ilk="function" name="trace" returns="void" signature="trace(statement) -&gt; titanium" />
+                    <scope doc="Log a statement with WARN severity. The severity levels in order from least severe to most severe are: TRACE, DEBUG, INFO, NOTICE, WARN, ERROR, CRITICAL, FATAL." ilk="function" name="warn" returns="void" signature="warn(statement) -&gt; titanium" />
+                    <variable citdl="Number" name="APP_UPDATE" />
+                    <variable citdl="Number" name="CRITICAL" />
+                    <variable citdl="Number" name="DEBUG" />
+                    <variable citdl="Number" name="EQ" />
+                    <variable citdl="Number" name="ERROR" />
+                    <variable citdl="Number" name="FATAL" />
+                    <variable citdl="Number" name="GT" />
+                    <variable citdl="Number" name="GTE" />
+                    <variable citdl="Number" name="INFO" />
+                    <variable citdl="Number" name="LT" />
+                    <variable citdl="Number" name="LTE" />
+                    <variable citdl="Number" name="MOBILESDK" />
+                    <variable citdl="Number" name="MODULE" />
+                    <variable citdl="Number" name="NOTICE" />
+                    <variable citdl="Number" name="RUNTIME" />
+                    <variable citdl="Number" name="SDK" />
+                    <variable citdl="Number" name="TRACE" />
+                    <variable citdl="Number" name="UNKNOWN" />
+                    <variable citdl="Number" name="WARN" />
+                    <!-- Titanium.API.Application object -->
+                    <scope ilk="class" name="Application" doc="An object representing a Titanium application, either the currently running application or one on disk.">
+                        <scope doc="Find the value for a given argument. You may either pass 'param' or '--param' and this method will find the command-line value for '--param='." ilk="function" name="getArgumentValue" returns="String" signature="getArgumentValue(argument) -&gt; titanium" />
+                        <scope doc="Retrieve a list of command-line arguments passed to this application. This list will include the first argument, which is the path to the executable." ilk="function" name="getArguments" returns="Array" signature="getArguments() -&gt; titanium" />
+                        <scope doc="Return a list of all available (installed and bundled) components for this application. This is simply the list returned by API.getInstalledComponents() plus any components bundled with the application. Note that bundled components do not have a version currently." ilk="function" name="getAvailableComponents" returns="Array" signature="getAvailableComponents() -&gt; titanium" />
+                        <scope doc="Return a list of all available (installed and bundled) modules for this application. This is simply the list returned by API.getInstalledModules() plus any components bundled with the application. Note that bundled components do not have a version currently." ilk="function" name="getAvailableModules" returns="Array" signature="getAvailableModules() -&gt; titanium" />
+                        <scope doc="Return a list of all available (installed and bundled) runtimes for this application. This is simply the list returned by API.getInstalledModules() plus any components bundled with the application. Note that bundled components do not have a version currently." ilk="function" name="getAvailableRuntimes" returns="Array" signature="getAvailableRuntimes() -&gt; titanium" />
+                        <scope doc="Return a list of all bundled components for this for this application. Bundled components currently live inside the application contents directory in the following directories: My App.app/Contents/modules, My App.app/Contents/runtime, My App.app/Contents/sdk, My App.app/Contents/mobilesdk." ilk="function" name="getBundledComponents" returns="Array" signature="getBundledComponents() -&gt; titanium" />
+                        <scope doc="Return a list of all bundled modules for this for this application. Bundled modules currently live inside the application contents directory in the 'My App.app/Contents/modules' directory." ilk="function" name="getBundledModules" returns="Array" signature="getBundledModules() -&gt; titanium" />
+                        <scope doc="Return a list of all bundled runtimes for this for this application. A bundled runtime currently live inside the application contents directory in the 'My App.app/Contents/runtime' directory." ilk="function" name="getBundledRuntimes" returns="Array" signature="getBundledRuntimes() -&gt; titanium" />
+                        <scope doc="Return a list of all resolved components for this for this application. Resolved components may either be installed or bundled components. Note that currently bundled components returned in this list do not have a version." ilk="function" name="getComponents" returns="Array" signature="getComponents() -&gt; titanium" />
+                        <scope doc="Get the path to the application's user data directory. This path is guaranteed to be writable (as opposed to the application directory which should not be written to) and is suitable for storing any application files." ilk="function" name="getDataPath" returns="String" signature="getDataPath() -&gt; titanium" />
+                        <scope doc="Get a list of this application's dependencies. Dependencies are defined in the application manifest file." ilk="function" name="getDependencies" returns="Array" signature="getDependencies() -&gt; titanium" />
+                        <scope doc="Get the path to this application's executable." ilk="function" name="getExecutablePath" returns="String" signature="getExecutablePath() -&gt; titanium" />
+                        <scope doc="Get this application globally unique identifier. This is currently defined in the application manifest." ilk="function" name="getGUID" returns="String" signature="getGUID() -&gt; titanium" />
+                        <scope doc="Get this human readable id currently defined in both the application manifest and the application's tiapp.xml file." ilk="function" name="getID" returns="String" signature="getID() -&gt; titanium" />
+                        <scope doc="Get the contents of this application's manifest as an array of string pairs (array of size 2). Each entry in the manifest is a simple key-value pair. Comments are ignored." ilk="function" name="getManifest" returns="Array" signature="getManifest() -&gt; titanium" />
+                        <scope doc="Get the path to this application's manifest." ilk="function" name="getManifestPath" returns="String" signature="getManifestPath() -&gt; titanium" />
+                        <scope doc="Return a list of all resolved modules for this for this application. Resolved components may either be installed or bundled components. Note that currently bundled components returned in this list do not have a version." ilk="function" name="getModules" returns="Array" signature="getModules() -&gt; titanium" />
+                        <scope doc="Get this application's name." ilk="function" name="getName" returns="String" signature="getName() -&gt; titanium" />
+                        <scope doc="Retrieve the process identifier of this application. If this application is not the currently running application, this method will returned undefined." ilk="function" name="getPID" returns="Number" signature="getPID() -&gt; titanium" />
+                        <scope doc="Get this application's path. Note that this is the top-level path of application, not the path to the application contents directory. On OS X currently, the application contents directory is '[app path]/Contents'." ilk="function" name="getPath" returns="String" signature="getPath() -&gt; titanium" />
+                        <scope doc="Return the path to this application's resources directory. This directory is the 'Resources' subdirectory of the application contents directory." ilk="function" name="getResourcesPath" returns="String" signature="getResourcesPath() -&gt; titanium" />
+                        <scope doc="Return the resolved runtime for this for this application. Resolved components may either be installed or bundled components. Note that currently bundled components returned from this method do not have a version." ilk="function" name="getRuntime" returns="Titanium.API.Component" signature="getRuntime() -&gt; titanium" />
+                        <scope doc="Get this application's version." ilk="function" name="getVersion" returns="String" signature="getVersion() -&gt; titanium" />
+                        <scope doc="Determine if the given argument is in the argument list. You may either pass 'param' or '--param' and this method will find the command-line argument." ilk="function" name="hasArgument" returns="Boolean" signature="hasArgument(argument) -&gt; titanium" />
+                        <scope doc="Returns whether or not this is the currently running application." ilk="function" name="isCurrent" returns="Boolean" signature="isCurrent() -&gt; titanium" />
+                        <scope doc="Attempt to resolve all the dependencies for this application. Resolved components should be accessible through API.Application.getComponents afterward. Note that the currently running applicaiton should already have all of its dependencies resolved." ilk="function" name="resolveDependencies" returns="Array" signature="resolveDependencies() -&gt; titanium" />
+                    </scope>
+                    <!-- Titanium.API.Component object -->
+                    <scope ilk="class" name="Component" doc="An object representing a Titanium component, which may be either a module, runtime, SDK, Mobile SDK or application update.">
+                        <scope doc="Get the name of this component." ilk="function" name="getName" returns="String" signature="getName() -&gt; titanium" />
+                        <scope doc="Get the path to this component." ilk="function" name="getPath" returns="String" signature="getPath() -&gt; titanium" />
+                        <scope doc="Get the type of this component. Component types are defined as constants on the API module." ilk="function" name="getType" returns="Number" signature="getType() -&gt; titanium" />
+                        <scope doc="Get the version of this component. Note that bundled components do not currently have a version." ilk="function" name="getVersion" returns="String" signature="getVersion() -&gt; titanium" />
+                        <scope doc="Whether or not this component is bundled with an application." ilk="function" name="isBundled" returns="Boolean" signature="isBundled() -&gt; titanium" />
+                        <scope doc="Whether or not this component is currently loaded." ilk="function" name="isLoaded" returns="Boolean" signature="isLoaded() -&gt; titanium" />
+                    </scope>
+                    <!-- Titanium.API.Dependency object -->
+                    <scope ilk="class" name="Dependency" doc="An object representing a Titanium application dependency.">
+                        <scope doc="Get the name of this dependency." ilk="function" name="getName" returns="String" signature="getName() -&gt; titanium" />
+                        <scope doc="Get the requirement for this dependency. Dependency requirement types are defined as constants on the API module. Currently the installer only support API.EQ dependency types." ilk="function" name="getRequirement" returns="String" signature="getRequirement() -&gt; titanium" />
+                        <scope doc="Get the type of this dependency. Dependency types are defined as constants on the API module (e.g. API.SDK)." ilk="function" name="getType" returns="Number" signature="getType() -&gt; titanium" />
+                        <scope doc="Get the version part of this dependency." ilk="function" name="getVersion" returns="String" signature="getVersion() -&gt; titanium" />
+                    </scope>
+                    <!-- Titanium.API.Script object -->
+                    <scope ilk="class" name="Script" doc="Script object.">
+                    </scope>
+                </scope>
+                <!-- Titanium.Analytics module -->
+                <scope ilk="class" name="Analytics" doc="The Titanium Analytics module used for recording analytics events." returns="Object">
+                    <scope doc="Send an analytics event associated with application feature functionality." ilk="function" name="featureEvent" returns="void" signature="featureEvent(name, data) -&gt; titanium" />
+                    <scope doc="Send an analytics event associated with application navigation." ilk="function" name="navEvent" returns="void" signature="navEvent(from, to, name, data) -&gt; titanium" />
+                    <scope doc="Send an analytics event associated with application settings or configuration." ilk="function" name="settingsEvent" returns="String" signature="settingsEvent(name, data) -&gt; titanium" />
+                    <scope doc="Send an analytics event tracking the duration of an application action." ilk="function" name="timedEvent" returns="String" signature="timedEvent(event, start, stop, duration, data) -&gt; titanium" />
+                    <scope doc="Send an analytics event not covered by the other interfaces." ilk="function" name="userEvent" returns="String" signature="userEvent(name, data) -&gt; titanium" />
+                </scope>
+                <!-- Titanium.App module -->
+                <scope ilk="class" name="App" doc="A module for holding currently running application specific functionality." returns="Object">
+                    <scope doc="Convert the given app URL to a filesystem path. App URLs generally have the form 'app://subdir/resource.html' and resolve to a fileystem path rooted in the application resources directory." ilk="function" name="appURLToPath" returns="String" signature="appURLToPath() -&gt; titanium" />
+                    <scope doc="Create a new App.Properties object." ilk="function" name="createProperties" returns="Titanium.App.Properties" signature="createProperties(properties) -&gt; titanium" />
+                    <scope doc="Cause the application to exit after firing the Titanium.EXIT event. The application isn't guaranteed to exit when this method is called, because an event handler may cancel the EXIT event by calling preventDefault or stopPropagation on it." ilk="function" name="exit" returns="void" signature="exit() -&gt; titanium" />
+                    <scope doc="Return the command-line arguments passed to this application, excluding the first which is the path to the application executable." ilk="function" name="getArguments" returns="Array" signature="getArguments() -&gt; titanium" />
+                    <scope doc="Return the application's copyright information, defined in the tiapp.xml file." ilk="function" name="getCopyright" returns="String" signature="getCopyright() -&gt; titanium" />
+                    <scope doc="Return the application's description, defined in the tiapp.xml file." ilk="function" name="getDescription" returns="String" signature="getDescription() -&gt; titanium" />
+                    <scope doc="Return the application's GUID, defined in the application manifest." ilk="function" name="getGUID" returns="String" signature="getGUID() -&gt; titanium" />
+                    <scope doc="Return the full path to the application home directory. The application home or contents directory is the subdirectory within the application which contains the application Resources directory and bundled components. On OS X this is the directory 'My App.app/Contents' and on Windows and Linux it is simply the path to the application." ilk="function" name="getHome" returns="String" signature="getHome() -&gt; titanium" />
+                    <scope doc="Get this human readable id defined in both the application manifest and the application's tiapp.xml file." ilk="function" name="getID" returns="String" signature="getID() -&gt; titanium" />
+                    <scope doc="Return the full path to the application icon. The application icon path is specified in the application manifest and tiapp.xml relative to the application Resources directory." ilk="function" name="getIcon" returns="String" signature="getIcon() -&gt; titanium" />
+                    <scope doc="Return the application name." ilk="function" name="getName" returns="String" signature="getName() -&gt; titanium" />
+                    <scope doc="Return the full path to the application executable." ilk="function" name="getPath" returns="String" signature="getPath() -&gt; titanium" />
+                    <scope doc="Return the application publisher information specifiedi in the tiapp.xml file." ilk="function" name="getPublisher" returns="String" signature="getPublisher() -&gt; titanium" />
+                    <scope doc="Return the stream URL for the application's updates." ilk="function" name="getStreamURL" returns="String" signature="getStreamURL(...) -&gt; titanium" />
+                    <scope doc="Get the system properties defined in tiapp.xml (see App.Properties)." ilk="function" name="getSystemProperties" returns="Titanium.App.Properties" signature="getSystemProperties() -&gt; titanium" />
+                    <scope doc="Return the application URL defined in the tiapp.xml file." ilk="function" name="getURL" returns="String" signature="getURL() -&gt; titanium" />
+                    <scope doc="Return the application version defined in the tiapp.xml file." ilk="function" name="getVersion" returns="String" signature="getVersion() -&gt; titanium" />
+                    <scope doc="Loads a properties list from a file path." ilk="function" name="loadProperties" returns="Array" signature="loadProperties(path) -&gt; titanium" />
+                    <scope doc="Exit the application and restart it." ilk="function" name="restart" returns="String" signature="restart() -&gt; titanium" />
+                    <scope doc="Print a raw string to stderr without a trailing newline." ilk="function" name="stderr" returns="String" signature="stderr(data) -&gt; titanium" />
+                    <scope doc="Reads from stdin." ilk="function" name="stdin" returns="String" signature="stdin(prompt, delimiter) -&gt; titanium" />
+                    <scope doc="Print a String to stdout including a trailing newline." ilk="function" name="stdout" returns="void" signature="stdout(data) -&gt; titanium" />
+                    <!-- Titanium.App.Properties object -->
+                    <scope ilk="class" name="Properties" doc="An object holding a group of properties. Properties may either be defined in tiapp.xml (read-only) or in any other file on the filesystem. Titanium Properties offer an alternative to traditional HTML5 DOM storage.">
+                        <scope doc="Returns a property value as double. Throws an exception if this value can not be found and no default is provided or the value stored in the properties file could not be converted to the appropriate type." ilk="function" name="getDouble" returns="Number" signature="getDouble(name, default) -&gt; titanium" />
+                        <scope doc="Returns a property value as an integer. Throws an exception if this value can not be found and no default is provided or the value stored in the properties file could not be converted to the appropriate type." ilk="function" name="getInt" returns="Number" signature="getInt(name, default) -&gt; titanium" />
+                        <scope doc="Returns a property value as an Array. Throws an exception if this value can not be found and no default is provided or the value stored in the properties file could not be converted to the appropriate type." ilk="function" name="getList" returns="" signature="getList(name, default) -&gt; titanium" />
+                        <scope doc="Returns a property value as a String. Throws an exception if this value can not be found and no default is provided or the value stored in the properties file could not be converted to the appropriate type." ilk="function" name="getString" returns="String" signature="getString(name, default) -&gt; titanium" />
+                        <scope doc="Query whether or not a given property exists in this Property object." ilk="function" name="hasProperty" returns="Boolean" signature="hasProperty(name) -&gt; titanium" />
+                        <scope doc="Returns an Array of all property names in this App.Properties object." ilk="function" name="listProperties" returns="Array" signature="listProperties() -&gt; titanium" />
+                        <scope doc="Save this App.Properties object to file at the given path." ilk="function" name="saveTo" returns="void" signature="saveTo(path) -&gt; titanium" />
+                        <scope doc="Set a double property value given the name and value." ilk="function" name="setDouble" returns="void" signature="setDouble(name, value) -&gt; titanium" />
+                        <scope doc="Set an integer property value given the name and value." ilk="function" name="setInt" returns="void" signature="setInt(name, value) -&gt; titanium" />
+                        <scope doc="Set a list property value given the name and array of Strings." ilk="function" name="setList" returns="void" signature="setList(name, value) -&gt; titanium" />
+                        <scope doc="Set a String property value given the name and value." ilk="function" name="setString" returns="void" signature="setString(name, value) -&gt; titanium" />
+                    </scope>
+                </scope>
+                <!-- Titanium.Codec module -->
+                <scope ilk="class" name="Codec" doc="A module for dealing with encoding and decoding.">
+                    <scope doc="Compute the checksum of the given String with the given checksum algorithm." ilk="function" name="checksum" returns="Number" signature="checksum(data, checksumType) -&gt; titanium" />
+                    <scope doc="Asynchronously write the contents of a directory to a zip file." ilk="function" name="createZip" returns="String" signature="createZip(root, zipFile, onComplete) -&gt; titanium" />
+                    <scope doc="Decode a Base64-encoded String." ilk="function" name="decodeBase64" returns="String" signature="decodeBase64(data) -&gt; titanium" />
+                    <scope doc="Decode a hex binary-encoded String." ilk="function" name="decodeHexBinary" returns="String" signature="decodeHexBinary(data) -&gt; titanium" />
+                    <scope doc="Digest a String into a hex binary HMAC. String data will first be converted to UTF-8 data." ilk="function" name="digestHMACToHex" returns="String" signature="digestHMACToHex(hashType, data, key) -&gt; titanium" />
+                    <scope doc="Encode some data using a digest algorithm to a hex binary String. String data will first be converted to UTF-8 data." ilk="function" name="digestToHex" returns="String" signature="digestToHex(hashType, data) -&gt; titanium" />
+                    <scope doc="Encode some data into Base64. String data will first be converted to UTF-8 data." ilk="function" name="encodeBase64" returns="String" signature="encodeBase64(data) -&gt; titanium" />
+                    <scope doc="Encode some data into a hex binary String. String data will first be converted to UTF-8 data." ilk="function" name="encodeHexBinary" returns="String" signature="encodeHexBinary(datq) -&gt; titanium" />
+                    <scope doc="Asynchronously extract the contents of a zip file." ilk="function" name="extractZip" returns="String" signature="extractZip(zipFile, dest, onComplete) -&gt; titanium" />
+                    <variable citdl="Number" name="ADLER32" />
+                    <variable citdl="Number" name="CRC32" />
+                    <variable citdl="Number" name="MD2" />
+                    <variable citdl="Number" name="MD4" />
+                    <variable citdl="Number" name="MD5" />
+                    <variable citdl="Number" name="SHA1" />
+                </scope>
+                <!-- Titanium.Database module -->
+                <scope ilk="class" name="Database" doc="A module for dealing with Database storage." returns="Object">
+                    <scope doc="Open a WebKit HTML5 compatible-database, given the name of the database to open. WebKit HTML5 databases are stored per-security origin and are not available between security origins. A security origin is composed of a URL scheme and hostname pair." ilk="function" name="open" returns="Titanium.Database.DB" signature="open(name) -&gt; titanium" />
+                    <scope doc="Open a database, given a path to an sqlite file." ilk="function" name="openFile" returns="Titanium.Database.DB" signature="openFile(path) -&gt; titanium" />
+                    <!-- Titanium.Database.DB object -->
+                    <scope ilk="class" name="DB" doc="An object representing a Titanium Database.">
+                        <scope doc="Close an open Database.DB. If the database is not open, this method will do nothing." ilk="function" name="close" returns="void" signature="close(void) -&gt; titanium" />
+                        <scope doc="Executes an SQL query on this Database.DB. Currently all queries must be valid SQLite-style SQL." ilk="function" name="execute" returns="Titanium.Database.ResultSet" signature="execute(query, ...) -&gt; titanium" />
+                        <scope doc="Get the full filesystem path to the database. If this database was opened via Datbase.openFile this path will be the originally path used, otherwise it will be the path to a WebKit database in the application data directory." ilk="function" name="getPath" returns="String" signature="getPath() -&gt; titanium" />
+                        <scope doc="Remove a Database.DB. This method will close the database if it is open and remove the file from the filesystem." ilk="function" name="remove" returns="void" signature="remove() -&gt; titanium" />
+                        <variable citdl="Number" name="lastInsertRowId" />
+                        <variable citdl="Number" name="rowsAffected" />
+                    </scope>
+                    <!-- Titanium Database.ResultSet object -->
+                    <scope ilk="class" name="ResultSet" doc="An object representing a set of result from a Database.DB query.">
+                        <scope doc="Releases the memory associated with this Database.ResultSet." ilk="function" name="close" returns="void" signature="close() -&gt; titanium" />
+                        <scope doc="Return the value of a field in the current row of this Database.ResultSet, given its index in the original SQL query." ilk="function" name="field" returns="Boolean or String or Number or Bytes" signature="field(fieldIndex) -&gt; titanium" />
+                        <scope doc="Return the value of the specified field in the current row." ilk="function" name="fieldByName" returns="Boolean or String or Number or Bytes" signature="fieldByName(name) -&gt; titanium" />
+                        <scope doc="Return the number of fields in this Database.ResultSet." ilk="function" name="fieldCount" returns="Number" signature="fieldCount() -&gt; titanium" />
+                        <scope doc="Return the name of the specified field in the Database.ResultSet given its index. The index of a field is determined by the original SQL query that generated this Database.ResultSet." ilk="function" name="fieldName" returns="String" signature="fieldName(fieldIndex) -&gt; titanium" />
+                        <scope doc="Check whether the current row of this Datbase.ResultSet is valid. Reasons for the current row not being valid include an error in the original SQL statement, a query that returned no results or iterating to the end of the Database.ResultSet." ilk="function" name="isValidRow" returns="Boolean" signature="isValidRow() -&gt; titanium" />
+                        <scope doc="Move the Database.ResultSet iterator to the next row of this result set. When the iterator has gone past the last entry in the Database.ResultSet, the isValidRow method will return false." ilk="function" name="next" returns="void" signature="next() -&gt; titanium" />
+                        <scope doc="Return the number of rows in this Database.ResultSet." ilk="function" name="rowCount" returns="Number" signature="rowCount() -&gt; titanium" />
+                    </scope>
+                </scope>
+                <!-- Titanium.Filesystem module -->
+                <scope ilk="class" name="Filesystem" doc="A module for accessing the Filesystem." returns="Object">
+                    <scope doc="Executes an asynchronous copy operation and returns an AsyncCopy object." ilk="function" name="asyncCopy" returns="Titanium.Filesystem.AsyncCopy" signature="asyncCopy(paths, destination, callback) -&gt; titanium" />
+                    <scope doc="Create a temporary directory. This directory is guaranteed to be writable. If it still exists when the application exits, it will be deleted." ilk="function" name="createTempDirectory" returns="Titanium.Filesystem.File" signature="createTempDirectory() -&gt; titanium" />
+                    <scope doc="Create an temporary file. This file is guaranteed to be writable. If it still exists when the application exits, it will be deleted." ilk="function" name="createTempFile" returns="Titanium.Filesystem.File" signature="createTempFile() -&gt; titanium" />
+                    <scope doc="Return the data directory of the application. The data directory is per-user directory for storing application data. It is guaranteed to be writable and stable between releases." ilk="function" name="getApplicationDataDirectory" returns="Titanium.Filesystem.File" signature="getApplicationDataDirectory() -&gt; titanium" />
+                    <scope doc="Return the directory containing the application. The application directory may contain the application contents directory (OS X) or be the application contents directory (Windows and Linux). The application directory may not be writable and applications should not attempt to write to it." ilk="function" name="getApplicationDirectory" returns="Titanium.Filesystem.File" signature="getApplicationDirectory() -&gt; titanium" />
+                    <scope doc="Return the Desktop directory for the current user. OS X and Windows will always have a valid Desktop directory. Some Linux systems may not have one, in which case the home directory will be returned." ilk="function" name="getDesktopDirectory" returns="Titanium.Filesystem.File" signature="getDesktopDirectory() -&gt; titanium" />
+                    <scope doc="Return the documents directory for the current user. OS X and Windows will always have a valid Documents directory. Some Linux systems may not have one, in which case the home directory will be returned." ilk="function" name="getDocumentsDirectory" returns="Titanium.Filesystem.File" signature="getDocumentsDirectory() -&gt; titanium" />
+                    <scope doc="Create a Filesystem.File object given a variable-length argument list of Filesystem.File or a path strings. The list will be joined together to form one long path string." ilk="function" name="getFile" returns="Titanium.Filesystem.File" signature="getFile(base, ...) -&gt; titanium" />
+                    <scope doc="Create a Filesystem.Filestream object given a Filesystem.File or a path. Filesystem.Filestream is the preferred way of writing to files." ilk="function" name="getFileStream" returns="Titanium.Filesystem.Filestream" signature="getFileStream(file) -&gt; titanium" />
+                    <scope doc="Return the line ending most commonly used by the current operating system. This is useful for writing files with the platform compatibility in mind. File.Filestream.writeLine will use this value when completing lines." ilk="function" name="getLineEnding" returns="String" signature="getLineEnding() -&gt; titanium" />
+                    <scope doc="Return the directory commonly used for storing applications on this platform. On Linux systems, there can be many places for storing executables, so it is not recommended using this value to locate them." ilk="function" name="getProgramsDirectory" returns="Titanium.Filesystem.File" signature="getProgramsDirectory() -&gt; titanium" />
+                    <scope doc="Return the path to this application's resources directory. This directory is the 'Resources' subdirectory of the application contents directory. The application directory may not be writable and applications should not attempt to write to it." ilk="function" name="getResourcesDirectory" returns="Titanium.Filesystem.File" signature="getResourcesDirectory() -&gt; titanium" />
+                    <scope doc="Return the system root directories. On Unix systems there is at most one root directory '/' while on Windows active drive letters are considered system root directories." ilk="function" name="getRootDirectories" returns="Array" signature="getRootDirectories() -&gt; titanium" />
+                    <scope doc="Return the directory of the current Titanium runtime files." ilk="function" name="getRuntimeHomeDirectory" returns="Titanium.Filesystem.File" signature="getRuntimeHomeDirectory() -&gt; titanium" />
+                    <scope doc="Return the path separator used by the operating system." ilk="function" name="getSeparator" returns="String" signature="getSeparator() -&gt; titanium" />
+                    <scope doc="Return the home directory of the current user." ilk="function" name="getUserDirectory" returns="Titanium.Filesystem.File" signature="getUserDirectory() -&gt; titanium" />
+                    <variable citdl="Number" name="MODE_APPEND" />
+                    <variable citdl="Number" name="MODE_READ" />
+                    <variable citdl="Number" name="MODE_WRITE" />
+                    <!-- Titanium.Filesystem.AsyncCopy object -->
+                    <scope ilk="class" name="AsyncCopy" doc="A representation of an asynchronous copy operation created via calling Filesystem.asyncCopy.">
+                        <scope doc="True if this asynchronous copy operation is active, false otherwise." ilk="function" name="running" returns="Boolean" signature="running() -&gt; titanium" />
+                    </scope>
+                    <!-- Titanium.Filesystem.File object -->
+                    <scope ilk="class" name="File" doc="An object which represents a path to a file or directory. A Filesystem.File is not guaranteed to be a valid path." returns="Object">
+                        <scope doc="Copies a file to the specified location. If the target is a directory the file will be written to that directory. If the target is a file, the file will be written to that file." ilk="function" name="copy" returns="void" signature="copy(target) -&gt; titanium" />
+                        <scope doc="Create a new directory at this File object's path. If the directory already exists, this method will do nothing. This method will return true if the directory was created or false if it was not." ilk="function" name="createDirectory" returns="Boolean" signature="createDirectory() -&gt; titanium" />
+                        <scope doc="Creates a shortcut to a file or directory at this Filesystem.File's path. On Windows this will create a Win32 style shortcut. On Linux and OS X this will create a symlink. If the operation is successful this method will return true and false otherwise." ilk="function" name="createShortcut" returns="Boolean" signature="createShortcut(target) -&gt; titanium" />
+                        <scope doc="Return the timestamp for when this file or directory was created. The return value of this function will be microseconds since the epoch at the time this file was created." ilk="function" name="createTimestamp" returns="Number" signature="createTimestamp() -&gt; titanium" />
+                        <scope doc="Remove the file or directory specified by this Filesystem.File. Return true if removal succeeded and false otherwise." ilk="function" name="deleteDirectory" returns="Boolean" signature="deleteDirectory(recursive) -&gt; titanium" />
+                        <scope doc="Remove the file or directory specified by this Filesystem.File, this method never removes directories recursively. Return true if removal succeeded and false otherwise." ilk="function" name="deleteFile" returns="String" signature="deleteFile() -&gt; titanium" />
+                        <scope doc="Return true if a file or directory exists at the path specified by this Filesystem.File." ilk="function" name="exists" returns="Boolean" signature="exists() -&gt; titanium" />
+                        <scope doc="Return the extension of this Filesystem.File." ilk="function" name="extension" returns="String" signature="extension() -&gt; titanium" />
+                        <scope doc="If this Filesystem.File specifies the path to a directory, return an Array of items inside this directory. If this path does not exist or is not a directory, return null." ilk="function" name="getDirectoryListing" returns="Array" signature="getDirectoryListing() -&gt; titanium" />
+                        <scope doc="Return true if the path specified by this Filesystem.File refers to a directory or false otherwise." ilk="function" name="isDirectory" returns="Boolean" signature="isDirectory() -&gt; titanium" />
+                        <scope doc="Return true if the directory or file at the path specified by this Filesystem.File object has the executable bit set. If the file does not exists, this method will return false." ilk="function" name="isExecutable" returns="Boolean" signature="isExecutable() -&gt; titanium" />
+                        <scope doc="Return true if the path specified by this Filesystem.File refers to a file or false otherwise." ilk="function" name="isFile" returns="Boolean" signature="isFile() -&gt; titanium" />
+                        <scope doc="Return true if the path specified by this Filesystem.File refers to a hidden file. On Windows this means that the file has the hidden attribute and on Linux and OS X this means that the basename of this path begins with a period." ilk="function" name="isHidden" returns="Boolean" signature="isHidden() -&gt; titanium" />
+                        <scope doc="Return true if the path specified by this Filesystem.File refers to a read-only file." ilk="function" name="isReadonly" returns="String" signature="isReadonly() -&gt; titanium" />
+                        <scope doc="Return true if the path specified by this Filesystem.File refers to a symbolic link." ilk="function" name="isSymbolicLink" returns="Boolean" signature="isSymbolicLink() -&gt; titanium" />
+                        <scope doc="Return true if the path specified by this Filesystem.File refers to a writable file and false otherwise." ilk="function" name="isWritable" returns="Boolean" signature="isWritable() -&gt; titanium" />
+                        <scope doc="Return the timestamp for when this file or directory was modified. The return value of this function will be microseconds since the epoch at the last time this file was modified." ilk="function" name="modificationTimestamp" returns="Number" signature="modificationTimestamp() -&gt; titanium" />
+                        <scope doc="Moves to the specified location. If the target is a directory the file will be written to that directory. If the target is a file, the file will be written to that file." ilk="function" name="move" returns="String" signature="move(target) -&gt; titanium" />
+                        <scope doc="Return the full path of this File.Filesystem object." ilk="function" name="nativePath" returns="String" signature="nativePath() -&gt; titanium" />
+                        <scope doc="Create and open a Filestream for this File object." ilk="function" name="open" returns="Titanium.Filesystem.Filestream" signature="open(mode, binary, append) -&gt; titanium" />
+                        <scope doc="Return the parent directory of this File.Filesystem object." ilk="function" name="parent" returns="Titanium.Filesystem.File" signature="parent() -&gt; titanium" />
+                        <scope doc="This function was deprecated in 1.1.0. The method has been superseded by Filestream.read(). Return the entire contents of a file as a Bytes object." ilk="function" name="read" returns="Titanium.Bytes" signature="read() -&gt; titanium" />
+                        <scope doc="This function was deprecated in 1.1.0. The method has been superseded by Filestream.readLine(). Return one line from the file specified by this Filesystem.File object. This method will return null when it finishes reading the file or if it encounters and error. The file object will remain in an open state until the entire file has been read via Filestream.File.readLine. It is recommended that new applications use Filesystem.Filestream to read files instead, which allow for explicit control over the native file handles." ilk="function" name="readLine" returns="String" signature="readLine() -&gt; titanium" />
+                        <scope doc="Renames a file to the given path." ilk="function" name="rename" returns="String" signature="rename(newPath) -&gt; titanium" />
+                        <scope doc="Resolves a given relative path against the path specified by this Filesystem.File object. If the given path is absolute, the absolute path is returned." ilk="function" name="resolve" returns="Titanium.Filesystem.File" signature="resolve(subPath) -&gt; titanium" />
+                        <scope doc="Set the execute bit on the file or directory at the path specified by this Filesystem.File object. Return true if the file or directory at this path is executable after the operation completes." ilk="function" name="setExecutable" returns="Boolean" signature="setExecutable() -&gt; titanium" />
+                        <scope doc="Remove the wrtiable bit and ensure there is a readable bit on the file or directory at the path specified by this Filesystem.File object. Return true if the file or directory at this path is read-only after the operation completes." ilk="function" name="setReadonly" returns="Boolean" signature="setReadonly() -&gt; titanium" />
+                        <scope doc="Set the write bit on the file or directory at the path specified by this Filesystem.File object. Return true if the file or directory at this path is writable after the operation completes." ilk="function" name="setWritable" returns="Boolean" signature="setWritable() -&gt; titanium" />
+                        <scope doc="Return the size of the file in number of bytes." ilk="function" name="size" returns="Number" signature="size() -&gt; titanium" />
+                        <scope doc="Return the space available on the filesystem containing the path specified by this Filesystem.File object in number of bytes." ilk="function" name="spaceAvailable" returns="Number" signature="spaceAvailable() -&gt; titanium" />
+                        <scope doc="Return the path of this Filesystem.File object as a String." ilk="function" name="toString" returns="String" signature="toString() -&gt; titanium" />
+                        <scope doc="Creates a new, empty file in an atomic operation. Returns true if the file was created or false if it already exists." ilk="function" name="touch" returns="Boolean" signature="touch() -&gt; titanium" />
+                        <scope doc="This function was deprecated in 1.1.0. The method has been superseded by Codec.extractZip(). If this file is a zip file, unzip it into the given destination directory. Return true if the operation was successful or false otherwise. This operation will block the main thread." ilk="function" name="unzip" returns="Boolean" signature="unzip(destination) -&gt; titanium" />
+                        <scope doc="This function was deprecated in 1.1.0. The method has been superseded by Filestream.write(). Write data to the file at the path specified by this Filesystem.File object. Returns true if any data was written to the file or false otherwise." ilk="function" name="write" returns="String" signature="write(data) -&gt; titanium" />
+                    </scope>
+                    <!-- Titanium.Filesystem.Filestream object -->
+                    <scope ilk="class" name="Filestream" doc="A object for reading and writing data to files.">
+                        <scope doc="Close this Filsystem.Filstream. Return true if the stream closed without any problems and false otherwise." ilk="function" name="close" returns="Boolean" signature="close() -&gt; titanium" />
+                        <scope doc="Return true if this Fileystem.Filestream is open and false otherwise." ilk="function" name="isOpen" returns="Boolean" signature="isOpen() -&gt; titanium" />
+                        <scope doc="Open this Filesystem.Filestream. Return true if the operation is successful or false otherwise." ilk="function" name="open" returns="Boolean" signature="open(mode, binary, append) -&gt; titanium" />
+                        <scope doc="Read data from a Filesystem.Filestream into a Bytes object and return it. This method will throw an exception if the operation fails." ilk="function" name="read" returns="Titanium.Bytes" signature="read(size) -&gt; titanium" />
+                        <scope doc="Reads one line from this Filesystem.Filestream. The stream must be open before using this method (or an exception will be thrown). Each call will return a Bytes object until the end of the stream, when null will be returned." ilk="function" name="readLine" returns="Titanium.Bytes" signature="readLine() -&gt; titanium" />
+                        <scope doc="Return true if this Filesystem.Filestream is ready for IO operations or false otherwise." ilk="function" name="ready" returns="Boolean" signature="ready() -&gt; titanium" />
+                        <scope doc="Set the current read/write position with in the file." ilk="function" name="seek" returns="void" signature="seek(offset, dir) -&gt; titanium" />
+                        <scope doc="Returns current position in file relative to the beginning." ilk="function" name="tell" returns="Number" signature="tell() -&gt; titanium" />
+                        <scope doc="Writes a line to this Filesystem.Filestream. Return true if this operation succeeds and false otherwise." ilk="function" name="write" returns="Boolean" signature="write(data) -&gt; titanium" />
+                        <scope doc="Writes a line to this Filesystem.Filestream. The data will be followed by the platform dependent line-ending sequence. Return true if this operation succeeds and false otherwise." ilk="function" name="writeLine" returns="Boolean" signature="writeLine(data) -&gt; titanium" />
+                        <variable citdl="Number" name="MODE_APPEND" />
+                        <variable citdl="Number" name="MODE_READ" />
+                        <variable citdl="Number" name="MODE_WRITE" />
+                    </scope>
+                </scope>
+                <!-- Titanium.JSON module -->
+                <scope ilk="class" name="JSON" doc="A module for serializing and deserializing JSON.">
+                    <scope doc="Deserialize a JSON string into a JavaScript value." ilk="function" name="parse" returns="Object" signature="parse(jsonString) -&gt; titanium" />
+                    <scope doc="Serialize a JavaScript value into a JSON string." ilk="function" name="stringify" returns="String" signature="stringify(value) -&gt; titanium" />
+                </scope>
+                <!-- Titanium.Media module -->
+                <scope ilk="class" name="Media" doc="A module for dealing with media." returns="Object">
+                    <scope doc="Activate the system bell. Some systems may have disabled the system bell." ilk="function" name="beep" returns="String" signature="beep() -&gt; titanium" />
+                    <scope doc="Factory method for Sound objects, created given a path or a URL to a sound file. The types of sound files that can be played depend on the codecs installed on the user's system." ilk="function" name="createSound" returns="Titanium.Media.Sound" signature="createSound(path) -&gt; titanium" />
+                    <!-- Titanium.Media.Sound object -->
+                    <scope ilk="class" name="Sound" doc="An object allowing for loading simple sounds and simple types of playback." returns="Object">
+                        <scope doc="Return the current volume of this Media.Sound object. Volume values will be between 0.0 and 1.0." ilk="function" name="getVolume" returns="Number" signature="getVolume() -&gt; titanium" />
+                        <scope doc="Return true if this Media.Sound is set to loop and false otherwise." ilk="function" name="isLooping" returns="Boolean" signature="isLooping() -&gt; titanium" />
+                        <scope doc="Return true if this Media.Sound is paused and false otherwise." ilk="function" name="isPaused" returns="Boolean" signature="isPaused() -&gt; titanium" />
+                        <scope doc="Return true if this Media.Sound is playing and false otherwise." ilk="function" name="isPlaying" returns="Boolean" signature="isPlaying() -&gt; titanium" />
+                        <scope doc="Set a callback to invoke once this sound is finished playing. If the sound is looping, this callback will be invoked after each iteration of the loop. Passing null as the argument to this function will unset the onComplete callback." ilk="function" name="onComplete" returns="void" signature="onComplete(callback) -&gt; titanium" />
+                        <scope doc="Pause a currently playing sound." ilk="function" name="pause" returns="void" signature="pause() -&gt; titanium" />
+                        <scope doc="Play a sound object. If the sound is paused, it will resume from the current location." ilk="function" name="play" returns="void" signature="play() -&gt; titanium" />
+                        <scope doc="Reload this sound from the original URL or path." ilk="function" name="reload" returns="void" signature="reload() -&gt; titanium" />
+                        <scope doc="Set whether or not this sound should loop." ilk="function" name="setLooping" returns="void" signature="setLooping(looping) -&gt; titanium" />
+                        <scope doc="Set the volume of this sound. Sound volumes should be between 0.0 and 1.0. Values outside of this range will be clipped to 0.0 or 1.0." ilk="function" name="setVolume" returns="void" signature="setVolume(volume) -&gt; titanium" />
+                        <scope doc="Stop a currently playing sound." ilk="function" name="stop" returns="void" signature="stop() -&gt; titanium" />
+                    </scope>
+                </scope>
+                <!-- Titanium.Network module -->
+                <scope ilk="class" name="Network" doc="A module for network functionality." returns="Object">
+                    <scope doc="Adds a connectivity change listener that fires when the system connects or disconnects from the internet." ilk="function" name="addConnectivityListener" returns="" signature="addConnectivityListener(listener) -&gt; titanium" />
+                    <scope doc="Creates an HTTPClient object." ilk="function" name="createHTTPClient" returns="Titanium.Network.HTTPClient" signature="createHTTPClient() -&gt; titanium" />
+                    <scope doc="Creates a new HTTPCookie object." ilk="function" name="createHTTPCookie" returns="Titanium.Network.HTTPCookie" signature="createHTTPCookie() -&gt; titanium" />
+                    <scope doc="Creates an HTTPServer object." ilk="function" name="createHTTPServer" returns="Titanium.Network.HTTPServer" signature="createHTTPServer() -&gt; titanium" />
+                    <scope doc="Creates an IPAddress object." ilk="function" name="createIPAddress" returns="Titanium.Network.IPAddress" signature="createIPAddress(address) -&gt; titanium" />
+                    <scope doc="Creates an IRCClient object." ilk="function" name="createIRCClient" returns="Titanium.Network.IRCClient" signature="createIRCClient() -&gt; titanium" />
+                    <scope doc="Creates a TCPSocket object." ilk="function" name="createTCPSocket" returns="Titanium.Network.TCPSocket" signature="createTCPSocket(host, port) -&gt; titanium" />
+                    <scope doc="Decodes a URI component." ilk="function" name="decodeURIComponent" returns="String" signature="decodeURIComponent(value) -&gt; titanium" />
+                    <scope doc="Encodes a URI Component." ilk="function" name="encodeURIComponent" returns="String" signature="encodeURIComponent(value) -&gt; titanium" />
+                    <scope doc="Return the first IPv4 address in this system's list of interfaces.." ilk="function" name="getFirstIPAddress" returns="String" signature="getFirstIPAddress() -&gt; titanium" />
+                    <scope doc="Return the first MAC address in this system's list of interfaces." ilk="function" name="getFirstMACAddress" returns="String" signature="getFirstMACAddress() -&gt; titanium" />
+                    <scope doc="Return the proxy override, if one is set." ilk="function" name="getHTTPProxy" returns="String" signature="getHTTPProxy() -&gt; titanium" />
+                    <scope doc="Return the proxy override, if one is set." ilk="function" name="getHTTPSProxy" returns="String" signature="getHTTPSProxy() -&gt; titanium" />
+                    <scope doc="Returns a Host object using an address." ilk="function" name="getHostByAddress" returns="Titanium.Network.Host" signature="getHostByAddress(address) -&gt; titanium" />
+                    <scope doc="Returns a Host object using a hostname." ilk="function" name="getHostByName" returns="Titanium.Network.Host" signature="getHostByName(name) -&gt; titanium" />
+                    <scope doc="Return a list of network interfaces on this system." ilk="function" name="getInterfaces" returns="Array" signature="getInterfaces() -&gt; titanium" />
+                    <scope doc="Removes a connectivity change listener." ilk="function" name="removeConnectivityListener" returns="String" signature="removeConnectivityListener(id) -&gt; titanium" />
+                    <scope doc="Override application proxy autodetection with a proxy URL." ilk="function" name="setHTTPProxy" returns="String" signature="setHTTPProxy(hostname) -&gt; titanium" />
+                    <scope doc="Override application proxy autodetection with a proxy URL." ilk="function" name="setHTTPSProxy" returns="String" signature="setHTTPSProxy(hostname) -&gt; titanium" />
+                    <variable citdl="Boolean" name="online" />
+                    <!-- Titanium.Network.IRCClient module -->
+                    <scope ilk="class" name="IRCClient" doc="An object representing an IRC client connection.">
+                        <scope doc="Connects an IRC to the host specified during creation of the IRCClient object." ilk="function" name="connect" returns="String" signature="connect(hostname, port, nick, name, user, pass, callback) -&gt; titanium" />
+                        <scope doc="Disconnects an IRC connection." ilk="function" name="disconnect" returns="String" signature="disconnect() -&gt; titanium" />
+                        <scope doc="Returns the nick name for the connection." ilk="function" name="getNick" returns="String" signature="getNick() -&gt; titanium" />
+                        <scope doc="Returns a list of users for the channel." ilk="function" name="getUsers" returns="Array" signature="getUsers() -&gt; titanium" />
+                        <scope doc="Checks whether a user has OP status." ilk="function" name="isOp" returns="Boolean" signature="isOp() -&gt; titanium" />
+                        <scope doc="Checks whether a user has VOICE status." ilk="function" name="isVoice" returns="Boolean" signature="isVoice() -&gt; titanium" />
+                        <scope doc="Joins a channel." ilk="function" name="join" returns="String" signature="join(channel) -&gt; titanium" />
+                        <scope doc="Sends data to the IRC connection." ilk="function" name="send" returns="String" signature="send(channel, message) -&gt; titanium" />
+                        <scope doc="Sets the nick name for the connection." ilk="function" name="setNick" returns="String" signature="setNick(nick) -&gt; titanium" />
+                        <scope doc="Leaves a channel." ilk="function" name="unjoin" returns="String" signature="unjoin(channel) -&gt; titanium" />
+                        <variable citdl="String" name="connected" />
+                    </scope>
+                    <!-- Titanium.Network.HTTPClient object-->
+                    <scope ilk="class" name="HTTPClient" doc="An HTTPClient which can be used as an alternative to XMLHttpRequest.">
+                        <scope doc="Aborts an in progress connection." ilk="function" name="abort" returns="String" signature="abort() -&gt; titanium" />
+                        <scope doc="Clear any cookies set on the request." ilk="function" name="clearCookies" returns="String" signature="clearCookies() -&gt; titanium" />
+                        <scope doc="Get an HTTP cookie from the response." ilk="function" name="getCookie" returns="Titanium.Network.HTTPCookie" signature="getCookie(name) -&gt; titanium" />
+                        <scope doc="Get the maximum number of redirects to follow. The default is -1, which means that there is no maximum limit to the number of redirects to follow." ilk="function" name="getMaxRedirects" returns="Number" signature="getMaxRedirects() -&gt; titanium" />
+                        <scope doc="Return the value of a response header, given it's name. If the given name occurs multiple times, this method will only return one occurence." ilk="function" name="getResponseHeader" returns="String" signature="getResponseHeader() -&gt; titanium" />
+                        <scope doc="Return all response headers as an array of two element arrays." ilk="function" name="getResponseHeaders" returns="Array" signature="getResponseHeaders() -&gt; titanium" />
+                        <scope doc="Return the current timeout setting of this Network.HTTPClient object in milliseconds. Thie value may be -1 to indicate no timeout. The default timeout value is five minutes." ilk="function" name="getTimeout" returns="Number" signature="getTimeout() -&gt; titanium" />
+                        <scope doc="Opens an HTTP connection." ilk="function" name="open" returns="Boolean" signature="open(method, url, asynchronous, username, password) -&gt; titanium" />
+                        <scope doc="Sends a request to the server and receive data with the provided handler." ilk="function" name="receive" returns="Boolean" signature="receive(handler, data) -&gt; titanium" />
+                        <scope doc="Sends data through the HTTP connection." ilk="function" name="send" returns="Boolean" signature="send(data) -&gt; titanium" />
+                        <scope doc="Sends the contents of a file as body content." ilk="function" name="sendFile" returns="String" signature="sendFile(file) -&gt; titanium" />
+                        <scope doc="Set the basic authentication credentials." ilk="function" name="setBasicCredentials" returns="String" signature="setBasicCredentials(username, password) -&gt; titanium" />
+                        <scope doc="Set an HTTP cookie in the request." ilk="function" name="setCookie" returns="String" signature="setCookie(name, value) -&gt; titanium" />
+                        <scope doc="Set the authentication credentials for the HTTPClient." ilk="function" name="setCredentials" returns="String" signature="setCredentials(username, password) -&gt; titanium" />
+                        <scope doc="Set the maximum number of redirects to follow. The default is -1, which means that there is no maximum limit to the number of redirects to follow." ilk="function" name="setMaxRedirects" returns="String" signature="setMaxRedirects(amount) -&gt; titanium" />
+                        <scope doc="Sets a request header for the connection." ilk="function" name="setRequestHeader" returns="String" signature="setRequestHeader(header, value) -&gt; titanium" />
+                        <scope doc="Set the timeout setting of this Network.HTTPClient. Thie value may be -1 to indicate no timeout. The default timeout value is five minutes." ilk="function" name="setTimeout" returns="String" signature="setTimeout(timeout) -&gt; titanium" />
+                        <variable citdl="Number" name="DONE" />
+                        <variable citdl="Number" name="HEADERS_RECEIVED" />
+                        <variable citdl="Number" name="LOADING" />
+                        <variable citdl="Number" name="OPENED" />
+                        <variable citdl="Number" name="UNSENT" />
+                        <variable citdl="Boolean" name="connected" />
+                        <variable citdl="Number" name="dataReceived" />
+                        <variable citdl="Number" name="dataSent" />
+                        <variable citdl="Function" name="ondatastream" />
+                        <variable citdl="Function" name="onload" />
+                        <variable citdl="Function" name="onreadystatechange" />
+                        <variable citdl="Function" name="onsendstream" />
+                        <variable citdl="Number" name="readyState" />
+                        <variable citdl="Titanium.Bytes" name="responseData" />
+                        <variable citdl="String" name="responseText" />
+                        <variable citdl="String" name="responseXML" />
+                        <variable citdl="Number" name="status" />
+                        <variable citdl="String" name="statusText" />
+                        <variable citdl="Boolean" name="timedOut" />
+                        <variable citdl="String" name="url" />
+                        <variable citdl="String" name="userAgent" />
+                    </scope>
+                    <!-- Titanium.Network.HTTPCookie object -->
+                    <scope ilk="class" name="HTTPCookie" doc="An object representing an HTTP cookie.">
+                        <scope doc="Get the cookie comment text." ilk="function" name="getComment" returns="String" signature="getComment() -&gt; titanium" />
+                        <scope doc="Get the domain for which the cookie is valid." ilk="function" name="getDomain" returns="String" signature="getDomain() -&gt; titanium" />
+                        <scope doc="Get the lifetime of the cookie, in seconds." ilk="function" name="getMaxAge" returns="Number" signature="getMaxAge() -&gt; titanium" />
+                        <scope doc="Get the cookie name." ilk="function" name="getName" returns="String" signature="getName() -&gt; titanium" />
+                        <scope doc="Get the subset of URLs to which this cookie applies." ilk="function" name="getPath" returns="String" signature="getPath() -&gt; titanium" />
+                        <scope doc="Get the cookie value." ilk="function" name="getValue" returns="String" signature="getValue() -&gt; titanium" />
+                        <scope doc="Identifies to which version of the state management specification the cookie conforms. 0 = netscape 1 = RFC2109." ilk="function" name="getVersion" returns="Number" signature="getVersion() -&gt; titanium" />
+                        <scope doc="Check if the http only flag is set on the cookie." ilk="function" name="isHTTPOnly" returns="Boolean" signature="isHTTPOnly() -&gt; titanium" />
+                        <scope doc="Check if the secure flag is set on the cookie." ilk="function" name="isSecure" returns="Boolean" signature="isSecure() -&gt; titanium" />
+                        <scope doc="Set the cookie comment text." ilk="function" name="setComment" returns="String" signature="setComment(comment) -&gt; titanium" />
+                        <scope doc="Set the domain for which the cookie is valid." ilk="function" name="setDomain" returns="String" signature="setDomain(domain) -&gt; titanium" />
+                        <scope doc="Set the http only flag on the cookie." ilk="function" name="setHTTPOnly" returns="String" signature="setHTTPOnly(enableHTTPOnly) -&gt; titanium" />
+                        <scope doc="Set the lifetime of the cookie, in seconds." ilk="function" name="setMaxAge" returns="String" signature="setMaxAge(lifetime) -&gt; titanium" />
+                        <scope doc="Set the cookie name." ilk="function" name="setName" returns="String" signature="setName(name) -&gt; titanium" />
+                        <scope doc="Set the subset of URLs to which this cookie applies." ilk="function" name="setPath" returns="String" signature="setPath(path) -&gt; titanium" />
+                        <scope doc="Set the secure flag on the cookie." ilk="function" name="setSecure" returns="String" signature="setSecure(enableSecure) -&gt; titanium" />
+                        <scope doc="Set the cookie value." ilk="function" name="setValue" returns="String" signature="setValue(value) -&gt; titanium" />
+                        <scope doc="Set the state management specifiction version the cookie conforms. (Default: 0)." ilk="function" name="setVersion" returns="String" signature="setVersion(version) -&gt; titanium" />
+                        <scope doc="Return a string representation of the cookie." ilk="function" name="toString" returns="String" signature="toString() -&gt; titanium" />
+                    </scope>
+                    <!-- Titanium.Network.HTTPServer object -->
+                    <scope ilk="class" name="HTTPServer" doc="An implementation of an HTTPServer.">
+                        <scope doc="Bind this server to a port on a specific interface." ilk="function" name="bind" returns="String" signature="bind(port, address, callback) -&gt; titanium" />
+                        <scope doc="Close this server." ilk="function" name="close" returns="String" signature="close() -&gt; titanium" />
+                        <scope doc="Check to see if this server socket is closed." ilk="function" name="isClosed" returns="Boolean" signature="isClosed() -&gt; titanium" />
+                    </scope>
+                    <!-- Titanium.Network.HTTPServerRequest object -->
+                    <scope ilk="class" name="HTTPServerRequest" doc="An object representing a single HTTP server request.">
+                        <scope doc="The content length of this request." ilk="function" name="getContentLength" returns="Number" signature="getContentLength() -&gt; titanium" />
+                        <scope doc="Get the content type of this request." ilk="function" name="getContentType" returns="String" signature="getContentType() -&gt; titanium" />
+                        <scope doc="Get an HTTP header value from this request." ilk="function" name="getHeader" returns="String" signature="getHeader(header) -&gt; titanium" />
+                        <scope doc="Get HTTP header values from this request." ilk="function" name="getHeaders" returns="Array" signature="getHeaders() -&gt; titanium" />
+                        <scope doc="Get the HTTP method of this request." ilk="function" name="getMethod" returns="String" signature="getMethod() -&gt; titanium" />
+                        <scope doc="Get the URI of this request." ilk="function" name="getURI" returns="String" signature="getURI() -&gt; titanium" />
+                        <scope doc="Get the HTTP version of this request." ilk="function" name="getVersion" returns="String" signature="getVersion() -&gt; titanium" />
+                        <scope doc="Check to see if this request has an HTTP header." ilk="function" name="hasHeader" returns="Boolean" signature="hasHeader(header) -&gt; titanium" />
+                        <scope doc="Read content from this request." ilk="function" name="read" returns="String" signature="read(length) -&gt; titanium" />
+                    </scope>
+                    <!-- Titanium.Network.HTTPServerResponse object -->
+                    <scope ilk="class" name="HTTPServerResponse" doc="An object representing a single HTTP server response.">
+                        <scope doc="Add a cookie to this response." ilk="function" name="addCookie" returns="String" signature="addCookie(name, value, maxAge, domain, path) -&gt; titanium" />
+                        <scope doc="Set the content length of this response." ilk="function" name="setContentLength" returns="String" signature="setContentLength(length) -&gt; titanium" />
+                        <scope doc="Set the content type of this response." ilk="function" name="setContentType" returns="String" signature="setContentType(type) -&gt; titanium" />
+                        <scope doc="Set an HTTP header of this response." ilk="function" name="setHeader" returns="String" signature="setHeader(name, value) -&gt; titanium" />
+                        <scope doc="Set the reason of this response." ilk="function" name="setReason" returns="String" signature="setReason(reason) -&gt; titanium" />
+                        <scope doc="Set the status of this response." ilk="function" name="setStatus" returns="String" signature="setStatus(status) -&gt; titanium" />
+                        <scope doc="Set the status and reason of this response." ilk="function" name="setStatusAndReason" returns="String" signature="setStatusAndReason(status, reason) -&gt; titanium" />
+                        <scope doc="Write content into this response." ilk="function" name="write" returns="String" signature="write(data) -&gt; titanium" />
+                    </scope>
+                    <!-- Titanium.Network.Host object -->
+                    <scope ilk="class" name="Host" doc="An object representing a host on the network.">
+                        <scope doc="Returns the list of address for a Host object." ilk="function" name="getAddresses" returns="Array" signature="getAddresses() -&gt; titanium" />
+                        <scope doc="Returns the list of aliases for a Host object." ilk="function" name="getAliases" returns="Array" signature="getAliases() -&gt; titanium" />
+                        <scope doc="Return the hostname of a Host object." ilk="function" name="getName" returns="String" signature="getName() -&gt; titanium" />
+                        <scope doc="Checks whether the Host object is invalid." ilk="function" name="isInvalid" returns="Boolean" signature="isInvalid() -&gt; titanium" />
+                        <scope doc="Returns a string representation of a Host object." ilk="function" name="toString" returns="String" signature="toString() -&gt; titanium" />
+                    </scope>
+                    <!-- Titanium.Network.IPAddress object -->
+                    <scope ilk="class" name="IPAddress" doc="An object representing an IP address.">
+                        <scope doc="Check whether an IPAddress object is a broadcast address." ilk="function" name="isBroadcast" returns="Boolean" signature="isBroadcast() -&gt; titanium" />
+                        <scope doc="Check whether an IPAddress object is a global multicast address." ilk="function" name="isGlobalMC" returns="Boolean" signature="isGlobalMC() -&gt; titanium" />
+                        <scope doc="Check whether an IPAddress object is an IPv4 address." ilk="function" name="isIPV4" returns="Boolean" signature="isIPV4() -&gt; titanium" />
+                        <scope doc="Check whether an IPAddress object is an IPv6 address." ilk="function" name="isIPV6" returns="Boolean" signature="isIPV6() -&gt; titanium" />
+                        <scope doc="Check whether an IPAddress object is invalid." ilk="function" name="isInvalid" returns="Boolean" signature="isInvalid() -&gt; titanium" />
+                        <scope doc="Check whether an IPAddress object is a link-local address." ilk="function" name="isLinkLocal" returns="Boolean" signature="isLinkLocal() -&gt; titanium" />
+                        <scope doc="Check whether an IPAddress object is a link-local multicast address." ilk="function" name="isLinkLocalMC" returns="Boolean" signature="isLinkLocalMC() -&gt; titanium" />
+                        <scope doc="Check whether an IPAddress object is a loopback address." ilk="function" name="isLoopback" returns="Boolean" signature="isLoopback() -&gt; titanium" />
+                        <scope doc="Check whether an IPAddress object is a multicast address." ilk="function" name="isMulticast" returns="Boolean" signature="isMulticast() -&gt; titanium" />
+                        <scope doc="Check whether an IPAddress object is a node-local multicast address." ilk="function" name="isNodeLocalMC" returns="Boolean" signature="isNodeLocalMC() -&gt; titanium" />
+                        <scope doc="Check whether an IPAddress object is an organization local multicast address." ilk="function" name="isOrgLocalMC" returns="Boolean" signature="isOrgLocalMC() -&gt; titanium" />
+                        <scope doc="Check whether an IPAddress object is a site-local address." ilk="function" name="isSiteLocal" returns="Boolean" signature="isSiteLocal() -&gt; titanium" />
+                        <scope doc="Check whether an IPAddress object is a site-local multicast address." ilk="function" name="isSiteLocalMC" returns="Boolean" signature="isSiteLocalMC() -&gt; titanium" />
+                        <scope doc="Check whether an IPAddress object is a unicast address." ilk="function" name="isUnicast" returns="Boolean" signature="isUnicast() -&gt; titanium" />
+                        <scope doc="Check whether an IPAddress object is a well-known multicast address." ilk="function" name="isWellKnownMC" returns="Boolean" signature="isWellKnownMC() -&gt; titanium" />
+                        <scope doc="Check whether an IPAddress object is a wildcard address." ilk="function" name="isWildcard" returns="Boolean" signature="isWildcard() -&gt; titanium" />
+                        <scope doc="Return a string representation of an IPAddress object." ilk="function" name="toString" returns="Boolean" signature="toString() -&gt; titanium" />
+                    </scope>
+                    <!-- Titanium.Network.Interface object -->
+                    <scope ilk="class" name="Interface" doc="No description provided.">
+                        <scope doc="Return the display name of this interface." ilk="function" name="getDisplayName" returns="String" signature="getDisplayName() -&gt; titanium" />
+                        <scope doc="Return the IP address of this interface." ilk="function" name="getIPAddress" returns="Titanium.Network.IPAddress" signature="getIPAddress() -&gt; titanium" />
+                        <scope doc="Get the name of this interface." ilk="function" name="getName" returns="String" signature="getName() -&gt; titanium" />
+                        <scope doc="Return the subnet mask of this interface as a Network.IPAddress object." ilk="function" name="getSubnetMask" returns="Titanium.Network.IPAddress" signature="getSubnetMask() -&gt; titanium" />
+                        <scope doc="Return true if this interface supports IPv4 and false otherwise." ilk="function" name="supportsIPv4" returns="Boolean" signature="supportsIPv4() -&gt; titanium" />
+                        <scope doc="Return true if this interface supports IPv6 and false otherwise." ilk="function" name="supportsIPv6" returns="Boolean" signature="supportsIPv6() -&gt; titanium" />
+                    </scope>
+                    <!-- Titanium.Network.TCPSocket object -->
+                    <scope ilk="class" name="TCPSocket" doc="An object representing a TCP client socket connection.">
+                        <scope doc="Close this Network.TCPSocket connection. If there is no open connection then do nothing. Return true if the connection was closed and false otherwise." ilk="function" name="close" returns="Boolean" signature="close() -&gt; titanium" />
+                        <scope doc="Connect the Socket object to the host specified during creation. The connection will be made asynchronously. Use onError to detect failures." ilk="function" name="connect" returns="String" signature="connect() -&gt; titanium" />
+                        <scope doc="Check whether the Socket is closed." ilk="function" name="isClosed" returns="Boolean" signature="isClosed() -&gt; titanium" />
+                        <scope doc="Set the callback that will be fired when the Socket encounters an error." ilk="function" name="onError" returns="" signature="onError(onError) -&gt; titanium" />
+                        <scope doc="Set a callback that will be fired when data is received on the Socket." ilk="function" name="onRead" returns="String" signature="onRead(onRead) -&gt; titanium" />
+                        <scope doc="Set the callback function that will be fired when a read finishes. A read is considered finished if some bytes have been read and a subsequent call to read returns zero bytes." ilk="function" name="onReadComplete" returns="String" signature="onReadComplete(onReadComplete) -&gt; titanium" />
+                        <scope doc="Set the callback that will be fired when an operation times out on the Socket." ilk="function" name="onTimeout" returns="String" signature="onTimeout(onTimeout) -&gt; titanium" />
+                        <scope doc="Set a callback that will be fired when data is written on the Socket." ilk="function" name="onWrite" returns="String" signature="onWrite(onWrite) -&gt; titanium" />
+                        <scope doc="Write data to the Socket's connection, if open." ilk="function" name="write" returns="Boolean" signature="write(data) -&gt; titanium" />
+                    </scope>
+                </scope>
+                <!-- Titanium.Notification module -->
+                <scope ilk="class" name="Notification" doc="A module for displaying desktop notifications.">
+                    <scope doc="Create a new Notification object." ilk="function" name="createNotification" returns="Titanium.Notification.Notification" signature="createNotification() -&gt; titanium" />
+                    <!-- Titanium.Notification.Notification object -->
+                    <scope ilk="class" name="Notification" doc="An object representing a Desktop notification.">
+                        <scope doc="Set the notification message." ilk="function" name="setMessage" returns="String" signature="setMessage(message) -&gt; titanium" />
+                        <scope doc="Hide this Notification." ilk="function" name="hide" returns="Boolean" signature="hide() -&gt; titanium" />
+                        <scope doc="Set a callback function fired when notification is clicked." ilk="function" name="setCallback" returns="String" signature="setCallback(callback) -&gt; titanium" />
+                        <scope doc="Set the notification icon image." ilk="function" name="setIcon" returns="String" signature="setIcon(icon) -&gt; titanium" />
+                        <scope doc="Set the timeout before the notification expires." ilk="function" name="setTimeout" returns="String" signature="setTimeout(timeout) -&gt; titanium" />
+                        <scope doc="Set the notification title." ilk="function" name="setTitle" returns="String" signature="setTitle(title) -&gt; titanium" />
+                        <scope doc="Display the notification." ilk="function" name="show" returns="Boolean" signature="show() -&gt; titanium" />
+                    </scope>
+                </scope>
+                <!-- Titanium.Platform module -->
+                <scope ilk="class" name="Platform" doc="A module for exposing platform-specific functionality." returns="Object">
+                    <scope doc="Create a universally unique identifier." ilk="function" name="createUUID" returns="String" signature="createUUID() -&gt; titanium" />
+                    <scope doc="Get a String representation of the current system's architecture." ilk="function" name="getArchitecture" returns="String" signature="getArchitecture() -&gt; titanium" />
+                    <scope doc="Get the per-user machine identifier of this session." ilk="function" name="getMachineId" returns="String" signature="getMachineId() -&gt; titanium" />
+                    <scope doc="Get the name of this platform." ilk="function" name="getName" returns="String" signature="getName() -&gt; titanium" />
+                    <scope doc="Return the operating system architecture type of this system. This value will be either '32bit' or '64bit'." ilk="function" name="getOSType" returns="String" signature="getOSType() -&gt; titanium" />
+                    <scope doc="Return the number of processors on this system." ilk="function" name="getProcessorCount" returns="Number" signature="getProcessorCount() -&gt; titanium" />
+                    <scope doc="Return the username of the current user." ilk="function" name="getUsername" returns="String" signature="getUsername() -&gt; titanium" />
+                    <scope doc="Return the version of this system's operating system." ilk="function" name="getVersion" returns="String" signature="getVersion() -&gt; titanium" />
+                    <scope doc="Open the given application or file in the system's default program." ilk="function" name="openApplication" returns="String" signature="openApplication(name) -&gt; titanium" />
+                    <scope doc="Open the given URL in the system's default browser." ilk="function" name="openURL" returns="String" signature="openURL(url) -&gt; titanium" />
+                    <scope doc="Take a PNG screenshot of the root window and save it to the given filename." ilk="function" name="takeScreenshot" returns="String" signature="takeScreenshot(filename) -&gt; titanium" />
+                </scope>
+                <!-- Titanium.Process module -->
+                <scope ilk="class" name="Process" doc="A module for creating processes.">
+                    <scope doc="Create a pipe for attaching to/from any number of processes." ilk="function" name="createPipe" returns="Titanium.Process.Pipe" signature="createPipe() -&gt; titanium" />
+                    <scope doc="Create a Process object. There are two main ways to use this function: By passing in an object, or passing in each parameter." ilk="function" name="createProcess" returns="Titanium.Process.Process" signature="createProcess(args, environment, pipeIn, pipeOut, pipeErr) -&gt; titanium" />
+                    <scope doc="This method is deprecated. See Process.Process.createProcess()." ilk="function" name="launch" returns="String" signature="launch(command, arguments) -&gt; titanium" />
+                    <variable citdl="Number" name="SIGABRT" />
+                    <variable citdl="Number" name="SIGALRM" />
+                    <variable citdl="Number" name="SIGBUS" />
+                    <variable citdl="Number" name="SIGCHLD" />
+                    <variable citdl="Number" name="SIGEMT" />
+                    <variable citdl="Number" name="SIGFPE" />
+                    <variable citdl="Number" name="SIGHUP" />
+                    <variable citdl="Number" name="SIGILL" />
+                    <variable citdl="Number" name="SIGINFO" />
+                    <variable citdl="Number" name="SIGINT" />
+                    <variable citdl="Number" name="SIGIO" />
+                    <variable citdl="Number" name="SIGKILL" />
+                    <variable citdl="Number" name="SIGPIPE" />
+                    <variable citdl="Number" name="SIGPROF" />
+                    <variable citdl="Number" name="SIGQUIT" />
+                    <variable citdl="Number" name="SIGSEGV" />
+                    <variable citdl="Number" name="SIGSTOP" />
+                    <variable citdl="Number" name="SIGSYS" />
+                    <variable citdl="Number" name="SIGTERM" />
+                    <variable citdl="Number" name="SIGTRAP" />
+                    <variable citdl="Number" name="SIGTSTP" />
+                    <variable citdl="Number" name="SIGTTIN" />
+                    <variable citdl="Number" name="SIGTTOU" />
+                    <variable citdl="Number" name="SIGURG" />
+                    <variable citdl="Number" name="SIGUSR1" />
+                    <variable citdl="Number" name="SIGUSR2" />
+                    <variable citdl="Number" name="SIGVTALRM" />
+                    <variable citdl="Number" name="SIGWINCH" />
+                    <variable citdl="Number" name="SIGXCPU" />
+                    <variable citdl="Number" name="SIGXFSZ" />
+                    <!-- Titanium.Process.Pipe object -->
+                    <scope ilk="class" name="Pipe" doc="An object representing an IO pipe.">
+                        <scope doc="Attach an IO object to this pipe. An IO object is an object that implements a public 'write(Bytes)'. In Titanium, this include FileStreams, and Pipes. You may also use your own custom IO implementation here." ilk="function" name="attach" returns="String" signature="attach() -&gt; titanium" />
+                        <scope doc="Close this pipe to further reading/writing." ilk="function" name="close" returns="String" signature="close() -&gt; titanium" />
+                        <scope doc="Detach an IO object from this pipe. see Process.Pipe.attach." ilk="function" name="detach" returns="String" signature="detach() -&gt; titanium" />
+                        <scope doc="" ilk="function" name="isAttached" returns="Boolean" signature="isAttached() -&gt; titanium" />
+                        <scope doc="Write data to this pipe." ilk="function" name="write" returns="Number" signature="write(data) -&gt; titanium" />
+                    </scope>
+                    <!-- Titanium.Process.Process object -->
+                    <scope ilk="class" name="Process" doc="An object representing a process instance.">
+                        <scope doc="Return a clone of this process' environment." ilk="function" name="cloneEnvironment" returns="Object" signature="cloneEnvironment() -&gt; titanium" />
+                        <scope doc="Return the list of arguments associated with this Process." ilk="function" name="getArguments" returns="Array" signature="getArguments() -&gt; titanium" />
+                        <scope doc="Return the environment associated with this process." ilk="function" name="getEnvironment" returns="Object" signature="getEnvironment(key) -&gt; titanium" />
+                        <scope doc="Return the exit code for this process. Before the process exits, this value will be null." ilk="function" name="getExitCode" returns="Number" signature="getExitCode() -&gt; titanium" />
+                        <scope doc="Return the process identifier for this process. Before the process launches, this value will be -1." ilk="function" name="getPID" returns="Number" signature="getPID() -&gt; titanium" />
+                        <scope doc="Return the stderr pipe for this process." ilk="function" name="getStderr" returns="Titanium.Process.Pipe" signature="getStderr() -&gt; titanium" />
+                        <scope doc="Return the stdin pipe for this process." ilk="function" name="getStdin" returns="Titanium.Process.Pipe" signature="getStdin() -&gt; titanium" />
+                        <scope doc="Return the stdout pipe for this process." ilk="function" name="getStdout" returns="Titanium.Process.Pipe" signature="getStdout() -&gt; titanium" />
+                        <scope doc="Return true if this process is running and false otherwise." ilk="function" name="isRunning" returns="Boolean" signature="isRunning() -&gt; titanium" />
+                        <scope doc="Kill this process (SIGINT in Unix, TerminateProcess in Windows)." ilk="function" name="kill" returns="String" signature="kill() -&gt; titanium" />
+                        <scope doc="Launch this process asynchronously (not waiting for it's exit)." ilk="function" name="launch" returns="String" signature="launch() -&gt; titanium" />
+                        <scope doc="Send a signal (e.g. Process.SIGHUP) to this Process NOTE: this method does nothing in Windows." ilk="function" name="sendSignal" returns="String" signature="sendSignal(signal) -&gt; titanium" />
+                        <scope doc="Set an environment variable for this process." ilk="function" name="setEnvironment" returns="String" signature="setEnvironment(key, value) -&gt; titanium" />
+                        <scope doc="Set an onExit event handler for this process." ilk="function" name="setOnExit" returns="String" signature="setOnExit(onExit) -&gt; titanium" />
+                        <scope doc="Set an onRead event handler for this process stdout and stderr. This handler will take one argument which is the event for this output. To retrieve event data, simply access event.data." ilk="function" name="setOnRead" returns="String" signature="setOnRead(onRead) -&gt; titanium" />
+                        <scope doc="Set the callback to invoke every time a line of input is received from the process. This callback will take one argument, which will be the line of output." ilk="function" name="setOnReadLine" returns="String" signature="setOnReadLine(onReadLine) -&gt; titanium" />
+                        <scope doc="Terminate this process (SIGTERM in Unix, TerminateProcess in Windows)." ilk="function" name="terminate" returns="String" signature="terminate() -&gt; titanium" />
+                        <scope doc="Get a string representation of this process." ilk="function" name="toString" returns="String" signature="toString() -&gt; titanium" />
+                    </scope>
+                </scope>
+                <!-- Titanium.UI module -->
+                <scope ilk="class" name="UI" doc="A module for controlling the user interface." returns="Object">
+                    <scope doc="Create and add a tray icon." ilk="function" name="addTray" returns="Titanium.UI.Tray" signature="addTray(iconURL, eventListener) -&gt; titanium" />
+                    <scope doc="Empty the tray of all this application's tray items." ilk="function" name="clearTray" returns="void" signature="clearTray() -&gt; titanium" />
+                    <scope doc="Create a new CheckMenuItem object." ilk="function" name="createCheckMenuItem" returns="Titanium.UI.CheckMenuItem" signature="createCheckMenuItem(label, eventListener) -&gt; titanium" />
+                    <scope doc="Create a new menu." ilk="function" name="createMenu" returns="Titanium.UI.Menu" signature="createMenu() -&gt; titanium" />
+                    <scope doc="Create a new menu item." ilk="function" name="createMenuItem" returns="Titanium.UI.MenuItem" signature="createMenuItem(label, eventListener, iconURL) -&gt; titanium" />
+                    <scope doc="Create a new separator menu item." ilk="function" name="createSeperatorMenuItem" returns="Titanium.UI.SeparatorMenuItem" signature="createSeperatorMenuItem() -&gt; titanium" />
+                    <scope doc="Create a new child window of the current window. This means that when the originating window is closed, the new window will be closed as well. If this function is called outside of the context of a window it will create a new top-level window. There are three ways to call this function. You may pass no arguments, in which case the new window will have the same configuration as the originating window. You may also simply pass a new absolute URL. If the URL matches the url or url-regex field of a tiapp.xml window configuration, then the window will use that configuration. For more information see the tiapp.xml guide. A window may also be created with an options object. Almost every field in a tiapp.xml window configuration has a corresponding field in the options object." ilk="function" name="createWindow" returns="Titanium.UI.UserWindow" signature="createWindow(options) -&gt; titanium" />
+                    <scope doc="Return this application's context menu or null if none is set." ilk="function" name="getContextMenu" returns="Titanium.UI.Menu" signature="getContextMenu() -&gt; titanium" />
+                    <scope doc="Return the current window. This function does not exist outside of the context of a window." ilk="function" name="getCurrentWindow" returns="Titanium.UI.UserWindow" signature="getCurrentWindow() -&gt; titanium" />
+                    <scope doc="Return the user's idle time (for the desktop, not just the application)." ilk="function" name="getIdleTime" returns="Number" signature="getIdleTime() -&gt; titanium" />
+                    <scope doc="Return the application's main window." ilk="function" name="getMainWindow" returns="Titanium.UI.UserWindow" signature="getMainWindow() -&gt; titanium" />
+                    <scope doc="Return the application's main Menu or null if none is set." ilk="function" name="getMenu" returns="Titanium.UI.Menu" signature="getMenu() -&gt; titanium" />
+                    <scope doc="Return a list of currently open windows." ilk="function" name="getOpenWindows" returns="Array" signature="getOpenWindows() -&gt; titanium" />
+                    <scope doc="Return a list of currently open windows." ilk="function" name="getWindows" returns="Array" signature="getWindows() -&gt; titanium" />
+                    <scope doc="Set the application icon's badge text." ilk="function" name="setBadge" returns="String" signature="setBadge(text) -&gt; titanium" />
+                    <scope doc="Set the application icon's badge image." ilk="function" name="setBadgeImage" returns="String" signature="setBadgeImage(imageURL) -&gt; titanium" />
+                    <scope doc="Set the application's context menu." ilk="function" name="setContextMenu" returns="String" signature="setContextMenu(menu) -&gt; titanium" />
+                    <scope doc="Set the dock icon." ilk="function" name="setDockIcon" returns="String" signature="setDockIcon(icon) -&gt; titanium" />
+                    <scope doc="Set the dock menu." ilk="function" name="setDockMenu" returns="String" signature="setDockMenu(menu) -&gt; titanium" />
+                    <scope doc="Set the application's icon." ilk="function" name="setIcon" returns="String" signature="setIcon(menu) -&gt; titanium" />
+                    <scope doc="Set a menu for the application." ilk="function" name="setMenu" returns="String" signature="setMenu(menu) -&gt; titanium" />
+                    <scope doc="Create a UI dialog." ilk="function" name="showDialog" returns="Titanium.UI.Dialog" signature="showDialog(params) -&gt; titanium" />
+                    <variable citdl="Number" name="CENTERED" />
+                    <!-- Titanium.UI.CheckMenuItem object -->
+                    <scope ilk="class" name="CheckMenuItem" doc="An object representing a check menu item.">
+                        <scope doc="Add a check item to this menu item's submenu with the given attributes. If this menu item does not have a submenu, it will be created. This method is not available for separator items." ilk="function" name="addCheckItem" returns="Titanium.UI.MenuItem" signature="addCheckItem(label, listener) -&gt; titanium" />
+                        <scope doc="Add an item to this menu item's submenu with the given attributes. If this menu item does not have a submenu, it will be created. This method is not available for separator items." ilk="function" name="addItem" returns="Titanium.UI.MenuItem" signature="addItem(label, listener, iconURL) -&gt; titanium" />
+                        <scope doc="Add a separator item to this menu item's submenu. If this menu item does not have a submenu, it will be created. This method is not available for separator items." ilk="function" name="addSeparatorItem" returns="Titanium.UI.MenuItem" signature="addSeparatorItem() -&gt; titanium" />
+                        <scope doc="Disable this item i.e. make it non-clickable. This method is not available for separator items." ilk="function" name="disable" returns="String" signature="disable() -&gt; titanium" />
+                        <scope doc="Enable this item i.e. make it clickable. This method is not available for separator items." ilk="function" name="enable" returns="String" signature="enable() -&gt; titanium" />
+                        <scope doc="This method is only available for check items." ilk="function" name="getAutoCheck" returns="String" signature="getAutoCheck(autocheck) -&gt; titanium" />
+                        <scope doc="Get this item's label. This method is not available for separator items." ilk="function" name="getLabel" returns="String" signature="getLabel() -&gt; titanium" />
+                        <scope doc="Gets the state of this check item This method is only available for check items." ilk="function" name="getState" returns="Boolean" signature="getState() -&gt; titanium" />
+                        <scope doc="Get this item's submenu. This method is not available for separator items." ilk="function" name="getSubmenu" returns="Titanium.UI.Menu" signature="getSubmenu() -&gt; titanium" />
+                        <scope doc="Return true if this UI.MenuItem is a check menu item or false otherwise." ilk="function" name="isCheck" returns="Boolean" signature="isCheck() -&gt; titanium" />
+                        <scope doc="This method is not available for separator items." ilk="function" name="isEnabled" returns="Boolean" signature="isEnabled() -&gt; titanium" />
+                        <scope doc="Return true if this UI.MenuItem is seperator menu item or false otherwise." ilk="function" name="isSeparator" returns="Boolean" signature="isSeparator() -&gt; titanium" />
+                        <scope doc="Set whether or not this check item is an autocheck item. An autocheck item (the default) will automatically flip the state of the check on a a click event. Turning off this behavior makes the check item more useful as a radio button. This method is only available for check items." ilk="function" name="setAutoCheck" returns="String" signature="setAutoCheck(autocheck) -&gt; titanium" />
+                        <scope doc="Set the label for this item. This method is not available for separator items." ilk="function" name="setLabel" returns="String" signature="setLabel(label) -&gt; titanium" />
+                        <scope doc="Sets the state of this check item This method is only available for check items." ilk="function" name="setState" returns="String" signature="setState(state) -&gt; titanium" />
+                        <scope doc="Set this item's submenu. This method is not available for separator items." ilk="function" name="setSubmenu" returns="String" signature="setSubmenu(menu) -&gt; titanium" />
+                    </scope>
+                    <!-- Titanium.UI.Clipboard object -->
+                    <scope ilk="class" name="Clipboard" doc="A module used for accessing clipboard data." returns="Object">
+                        <scope doc="Clear data of the given mime-type from the clipboard. If no mime-type is given, clear all data from the clipboard." ilk="function" name="clearData" returns="String" signature="clearData(type) -&gt; titanium" />
+                        <scope doc="Clear the text portion of the clipboard." ilk="function" name="clearText" returns="String" signature="clearText() -&gt; titanium" />
+                        <scope doc="Get the data on the clipboard from the portion which contains data of the given mime-type." ilk="function" name="getData" returns="String" signature="getData(type) -&gt; titanium" />
+                        <scope doc="Get the current text on the clipboard." ilk="function" name="getText" returns="String" signature="getText() -&gt; titanium" />
+                        <scope doc="Return true if there is any content of the given mime-type on the clipboard." ilk="function" name="hasData" returns="Boolean" signature="hasData(type) -&gt; titanium" />
+                        <scope doc="Return true if there is any content in the text portion of the clipboard." ilk="function" name="hasText" returns="Boolean" signature="hasText() -&gt; titanium" />
+                        <scope doc="Set the data on the clipboard given a mime-type and the new data. This method will set data on the appropriate portion of the clipboard for the given mime-type." ilk="function" name="setData" returns="String" signature="setData(type, data) -&gt; titanium" />
+                        <scope doc="Set the text on the clipboard. This will overwrite the current contents of the clipboard." ilk="function" name="setText" returns="String" signature="setText(newText) -&gt; titanium" />
+                    </scope>
+                    <!-- Titanium.UI.Dialog object -->
+                    <scope ilk="class" name="Dialog" doc="An object representing a Dialog window.">
+                        <scope doc="Get an incoming UI dialog parameter." ilk="function" name="getDialogParameter" returns="Any" signature="getDialogParameter(name, defaultValue) -&gt; titanium" />
+                        <scope doc="Get results from UI dialog." ilk="function" name="getDialogResult" returns="String" signature="getDialogResult() -&gt; titanium" />
+                    </scope>
+                    <!-- Titanium.UI.Menu object -->
+                    <scope ilk="class" name="Menu" doc="An object representing a menu.">
+                        <scope doc="Add a check item to this menu with the given attributes." ilk="function" name="addCheckItem" returns="Titanium.UI.MenuItem" signature="addCheckItem(label, listener) -&gt; titanium" />
+                        <scope doc="Add an item to this menu with the given attributes." ilk="function" name="addItem" returns="Titanium.UI.MenuItem" signature="addItem(label, listener, iconURL) -&gt; titanium" />
+                        <scope doc="Add a separator item to this menu." ilk="function" name="addSeparatorItem" returns="Titanium.UI.MenuItem" signature="addSeparatorItem() -&gt; titanium" />
+                        <scope doc="Append a MenuItem object to a menu." ilk="function" name="appendItem" returns="String" signature="appendItem(item) -&gt; titanium" />
+                        <scope doc="Remove all items from this menu." ilk="function" name="clear" returns="String" signature="clear() -&gt; titanium" />
+                        <scope doc="Get an item from this menu at the given index. This method will throw an exception if the index is out of range." ilk="function" name="getItemAt" returns="Titanium.UI.MenuItem" signature="getItemAt(index) -&gt; titanium" />
+                        <scope doc="Get the length of this menu." ilk="function" name="getLength" returns="Number" signature="getLength() -&gt; titanium" />
+                        <scope doc="Insert a menu item before the given index. This method will throw an exception if the index of out of range." ilk="function" name="insertItemAt" returns="String" signature="insertItemAt(item, index) -&gt; titanium" />
+                        <scope doc="Remove the item in this menu at the given index. This method will throw an exception if the index is out of range." ilk="function" name="removeItemAt" returns="String" signature="removeItemAt(index) -&gt; titanium" />
+                    </scope>
+                    <!-- Titanium.UI.MenuItem object -->
+                    <scope ilk="class" name="MenuItem" doc="An object representing a menu item.">
+                        <scope doc="Add a check item to this menu item's submenu with the given attributes. If this menu item does not have a submenu, it will be created. This method is not available for separator items." ilk="function" name="addCheckItem" returns="Titanium.UI.MenuItem" signature="addCheckItem(label, listener) -&gt; titanium" />
+                        <scope doc="Add an item to this menu item's submenu with the given attributes. If this menu item does not have a submenu, it will be created. This method is not available for separator items." ilk="function" name="addItem" returns="Titanium.UI.MenuItem" signature="addItem(label, listener, iconURL) -&gt; titanium" />
+                        <scope doc="Add a separator item to this menu item's submenu. If this menu item does not have a submenu, it will be created. This method is not available for separator items." ilk="function" name="addSeparatorItem" returns="Titanium.UI.MenuItem" signature="addSeparatorItem() -&gt; titanium" />
+                        <scope doc="Disable this item i.e. make it non-clickable. This method is not available for separator items." ilk="function" name="disable" returns="String" signature="disable() -&gt; titanium" />
+                        <scope doc="Enable this item i.e. make it clickable. This method is not available for separator items." ilk="function" name="enable" returns="String" signature="enable() -&gt; titanium" />
+                        <scope doc="This method is only available for check items." ilk="function" name="getAutoCheck" returns="String" signature="getAutoCheck(autocheck) -&gt; titanium" />
+                        <scope doc="Get this item's icon URL This method is not available for separator or check items." ilk="function" name="getIcon" returns="String" signature="getIcon() -&gt; titanium" />
+                        <scope doc="Get this item's label. This method is not available for separator items." ilk="function" name="getLabel" returns="String" signature="getLabel() -&gt; titanium" />
+                        <scope doc="Gets the state of this check item This method is only available for check items." ilk="function" name="getState" returns="Boolean" signature="getState() -&gt; titanium" />
+                        <scope doc="Get this item's submenu. This method is not available for separator items." ilk="function" name="getSubmenu" returns="Titanium.UI.Menu" signature="getSubmenu() -&gt; titanium" />
+                        <scope doc="Return true if this UI.MenuItem is a check menu item or false otherwise." ilk="function" name="isCheck" returns="Boolean" signature="isCheck() -&gt; titanium" />
+                        <scope doc="This method is not available for separator items." ilk="function" name="isEnabled" returns="Boolean" signature="isEnabled() -&gt; titanium" />
+                        <scope doc="Return true if this UI.MenuItem is seperator menu item or false otherwise." ilk="function" name="isSeparator" returns="Boolean" signature="isSeparator() -&gt; titanium" />
+                        <scope doc="Set whether or not this check item is an autocheck item. An autocheck item (the default) will automatically flip the state of the check on a a click event. Turning off this behavior makes the check item more useful as a radio button. This method is only available for check items." ilk="function" name="setAutoCheck" returns="String" signature="setAutoCheck(autocheck) -&gt; titanium" />
+                        <scope doc="Set the icon URL for this item This method is not available for separator or check items." ilk="function" name="setIcon" returns="String" signature="setIcon(iconURL) -&gt; titanium" />
+                        <scope doc="Set the label for this item. This method is not available for separator items." ilk="function" name="setLabel" returns="String" signature="setLabel(label) -&gt; titanium" />
+                        <scope doc="Sets the state of this check item This method is only available for check items." ilk="function" name="setState" returns="String" signature="setState(state) -&gt; titanium" />
+                        <scope doc="Set this item's submenu. This method is not available for separator items." ilk="function" name="setSubmenu" returns="String" signature="setSubmenu(menu) -&gt; titanium" />
+                    </scope>
+                    <!-- Titanium.UI.SeparatorMenuItem object -->
+                    <scope ilk="class" name="SeparatorMenuItem" doc="An object representing a separator menu item.">
+                        <scope doc="Return true if this UI.MenuItem is a check menu item or false otherwise." ilk="function" name="isCheck" returns="Boolean" signature="isCheck() -&gt; titanium" />
+                        <scope doc="Return true if this UI.MenuItem is seperator menu item or false otherwise." ilk="function" name="isSeparator" returns="Boolean" signature="isSeparator() -&gt; titanium" />
+                    </scope>
+                    <!-- Titanium.UI.Tray object -->
+                    <scope ilk="class" name="Tray" doc="An object representing a TrayItem.">
+                        <scope doc="Get the hint for this TrayItem." ilk="function" name="getHint" returns="String" signature="getHint() -&gt; titanium" />
+                        <scope doc="Get the icon URL for this TrayItem." ilk="function" name="getIcon" returns="String" signature="getIcon() -&gt; titanium" />
+                        <scope doc="Get the menu for this TrayItem." ilk="function" name="getMenu" returns="Titanium.UI.Menu" signature="getMenu() -&gt; titanium" />
+                        <scope doc="Removes a TrayItem." ilk="function" name="remove" returns="String" signature="remove() -&gt; titanium" />
+                        <scope doc="Sets a TrayItem's tooltip." ilk="function" name="setHint" returns="String" signature="setHint(hint) -&gt; titanium" />
+                        <scope doc="Sets a TrayItem's icon." ilk="function" name="setIcon" returns="String" signature="setIcon(icon) -&gt; titanium" />
+                        <scope doc="Set the menu for this TrayItem." ilk="function" name="setMenu" returns="String" signature="setMenu(menu) -&gt; titanium" />
+                    </scope>
+                    <!-- Titanium.UI.UserWindow object -->
+                    <scope ilk="class" name="UserWindow" doc="An object representing a top-level Titanium window.">
+                        <scope doc="Closes a window." ilk="function" name="close" returns="String" signature="close() -&gt; titanium" />
+                        <scope doc="Creates a new window as a child of the current window." ilk="function" name="createWindow" returns="Titanium.UI.UserWindow" signature="createWindow(options) -&gt; titanium" />
+                        <scope doc="Focuses a window." ilk="function" name="focus" returns="String" signature="focus() -&gt; titanium" />
+                        <scope doc="Return this window's bounds object. A bounds object is a simple JavaScript object containing four properties x, y, width, and height which correspond to the window geometry on the screen in pixels." ilk="function" name="getBounds" returns="Object" signature="getBounds() -&gt; titanium" />
+                        <scope doc="Get all children of this UI.UserWindow. All windows open from the context of this window are considered children. When a window is closed all of its children will also be closed automatically." ilk="function" name="getChildren" returns="Array" signature="getChildren() -&gt; titanium" />
+                        <scope doc="Return the context menu set on this UI.Userwindow or null if none is set." ilk="function" name="getContextMenu" returns="Titanium.UI.Menu" signature="getContextMenu() -&gt; titanium" />
+                        <scope doc="Return the WebKit DOMWindow of the page loaded in this window if one exists, otherwise return null. A DOMWindow object will not be available until a UI.UserWindow's PAGE_INITIALIZED event has fired." ilk="function" name="getDOMWindow" returns="Object" signature="getDOMWindow() -&gt; titanium" />
+                        <scope doc="Return this window's height in pixels." ilk="function" name="getHeight" returns="Number" signature="getHeight() -&gt; titanium" />
+                        <scope doc="Return this window's configuration id." ilk="function" name="getID" returns="String" signature="getID() -&gt; titanium" />
+                        <scope doc="Return this window's icon, if one is set or null." ilk="function" name="getIcon" returns="String" signature="getIcon() -&gt; titanium" />
+                        <scope doc="Return this window's maximum height." ilk="function" name="getMaxHeight" returns="Number" signature="getMaxHeight() -&gt; titanium" />
+                        <scope doc="Return this window's maximum height in pixels." ilk="function" name="getMaxWidth" returns="Number" signature="getMaxWidth() -&gt; titanium" />
+                        <scope doc="Return the window menu set on this UI.UserWindow if one is set, otherwise return null." ilk="function" name="getMenu" returns="Titanium.UI.Menu" signature="getMenu() -&gt; titanium" />
+                        <scope doc="Return this window's minimum height." ilk="function" name="getMinHeight" returns="Number" signature="getMinHeight() -&gt; titanium" />
+                        <scope doc="Return this window's minimum width." ilk="function" name="getMinWidth" returns="Number" signature="getMinWidth() -&gt; titanium" />
+                        <scope doc="Return this window's parent window or null if it is a top-level window." ilk="function" name="getParent" returns="Titanium.UI.UserWindow" signature="getParent() -&gt; titanium" />
+                        <scope doc="Return the title of this window." ilk="function" name="getTitle" returns="String" signature="getTitle() -&gt; titanium" />
+                        <scope doc="Return this window's opacity." ilk="function" name="getTransparency" returns="Number" signature="getTransparency() -&gt; titanium" />
+                        <scope doc="Return this window's current URL." ilk="function" name="getURL" returns="String" signature="getURL() -&gt; titanium" />
+                        <scope doc="Return this window's width in pixels." ilk="function" name="getWidth" returns="Number" signature="getWidth() -&gt; titanium" />
+                        <scope doc="Return a UI.UserWindow's horizontal (X-axis) position on the screen. The origin of the screen is considered to be the top-left on all platforms." ilk="function" name="getX" returns="Number" signature="getX() -&gt; titanium" />
+                        <scope doc="Return a UI.UserWindow's vertical (Y-axis) position on the screen. The origin of the screen is considered to be the top-left on all platforms." ilk="function" name="getY" returns="Number" signature="getY() -&gt; titanium" />
+                        <scope doc="Checks whether a window has a transparent background or not. If a window has a transparent background, transparent colors on the page will show through to windows underneath." ilk="function" name="hasTransparentBackground" returns="Boolean" signature="hasTransparentBackground() -&gt; titanium" />
+                        <scope doc="Hides a window." ilk="function" name="hide" returns="String" signature="hide() -&gt; titanium" />
+                        <scope doc="Return true if this window is active. An active window is one that has finished opening, but has not yet been closed." ilk="function" name="isActive" returns="Boolean" signature="isActive() -&gt; titanium" />
+                        <scope doc="Checks whether a window could be closed or not." ilk="function" name="isCloseable" returns="Boolean" signature="isCloseable() -&gt; titanium" />
+                        <scope doc="Checks whether a window is in an edited state." ilk="function" name="isDocumentEdited" returns="Boolean" signature="isDocumentEdited() -&gt; titanium" />
+                        <scope doc="Checks whether a window is in fullscreen." ilk="function" name="isFullscreen" returns="Boolean" signature="isFullscreen(chrome) -&gt; titanium" />
+                        <scope doc="Checks whether a window could be maximized or not." ilk="function" name="isMaximizable" returns="Boolean" signature="isMaximizable() -&gt; titanium" />
+                        <scope doc="Checks whether a window is maximized." ilk="function" name="isMaximized" returns="Boolean" signature="isMaximized() -&gt; titanium" />
+                        <scope doc="Checks whether a window could be minimized or not." ilk="function" name="isMinimizable" returns="Boolean" signature="isMinimizable() -&gt; titanium" />
+                        <scope doc="Checks whether a window is minimized." ilk="function" name="isMinimized" returns="Boolean" signature="isMinimized() -&gt; titanium" />
+                        <scope doc="Checks whether a window is resizable." ilk="function" name="isResizable" returns="Boolean" signature="isResizable() -&gt; titanium" />
+                        <scope doc="Checks whether a window is top most." ilk="function" name="isTopMost" returns="Boolean" signature="isTopMost() -&gt; titanium" />
+                        <scope doc="Checks whether a window uses system chrome." ilk="function" name="isUsingChrome" returns="Boolean" signature="isUsingChrome() -&gt; titanium" />
+                        <scope doc="Checks whether a window is visible." ilk="function" name="isVisible" returns="Boolean" signature="isVisible() -&gt; titanium" />
+                        <scope doc="Maximizes a window." ilk="function" name="maximize" returns="String" signature="maximize() -&gt; titanium" />
+                        <scope doc="Minimizes a window." ilk="function" name="minimize" returns="String" signature="minimize() -&gt; titanium" />
+                        <scope doc="Opens a window." ilk="function" name="open" returns="String" signature="open() -&gt; titanium" />
+                        <scope doc="Displays the file chooser dialog." ilk="function" name="openFileChooserDialog" returns="String" signature="openFileChooserDialog(callback, options) -&gt; titanium" />
+                        <scope doc="Displays the folder chooser dialog." ilk="function" name="openFolderChooserDialog" returns="String" signature="openFolderChooserDialog(callback, options) -&gt; titanium" />
+                        <scope doc="Displays the save as file dialog. Available options: title: string to use for dialog title path: path to where the dialog should be opened at types: list of file extensions that are allowed to be selected multiple: if true, allow user to select more than one file [default: true] defaultFile: default name to be used for saving." ilk="function" name="openSaveAsDialog" returns="void" signature="openSaveAsDialog(callback, options) -&gt; titanium" />
+                        <scope doc="Set this window's bounds object. A bounds object is a simple JavaScript object containing four properties x, y, width, and height which correspond to the window geometry on the screen in pixels." ilk="function" name="setBounds" returns="String" signature="setBounds(bounds) -&gt; titanium" />
+                        <scope doc="Sets whether a window could be closed or not." ilk="function" name="setCloseable" returns="String" signature="setCloseable(closeable) -&gt; titanium" />
+                        <scope doc="Set the contents of the UserWindow, given an HTML string and a base URL. Relative links in the HTML will be resolved relatively to the base URL." ilk="function" name="setContents" returns="String" signature="setContents(contents, baseURL) -&gt; titanium" />
+                        <scope doc="Set this window's context menu." ilk="function" name="setContextMenu" returns="String" signature="setContextMenu(menu) -&gt; titanium" />
+                        <scope doc="Set a window to the edited (a dot in the close button) or unedited state. OS X only." ilk="function" name="setDocumentEdited" returns="String" signature="setDocumentEdited(edited) -&gt; titanium" />
+                        <scope doc="Makes a window fullscreen." ilk="function" name="setFullscreen" returns="String" signature="setFullscreen(fullscreen) -&gt; titanium" />
+                        <scope doc="Sets a window's height." ilk="function" name="setHeight" returns="String" signature="setHeight(height) -&gt; titanium" />
+                        <scope doc="Sets a window's icon." ilk="function" name="setIcon" returns="String" signature="setIcon(icon) -&gt; titanium" />
+                        <scope doc="Sets a window's max-height." ilk="function" name="setMaxHeight" returns="String" signature="setMaxHeight(height) -&gt; titanium" />
+                        <scope doc="Sets a window's max-width." ilk="function" name="setMaxWidth" returns="String" signature="setMaxWidth(width) -&gt; titanium" />
+                        <scope doc="Sets whether a window could be maximized or not." ilk="function" name="setMaximizable" returns="String" signature="setMaximizable(maximizable) -&gt; titanium" />
+                        <scope doc="Set this window's menu." ilk="function" name="setMenu" returns="String" signature="setMenu(menu) -&gt; titanium" />
+                        <scope doc="Sets a window's min height." ilk="function" name="setMinHeight" returns="String" signature="setMinHeight(height) -&gt; titanium" />
+                        <scope doc="Sets a window's min-width." ilk="function" name="setMinWidth" returns="String" signature="setMinWidth(width) -&gt; titanium" />
+                        <scope doc="Sets whether a window could be maximized or not." ilk="function" name="setMinimizable" returns="String" signature="setMinimizable(minimizable) -&gt; titanium" />
+                        <scope doc="Set if plugins are enabled." ilk="function" name="setPluginsEnabled" returns="String" signature="setPluginsEnabled(enabled) -&gt; titanium" />
+                        <scope doc="Sets whether a window could be resized or not." ilk="function" name="setResizable" returns="String" signature="setResizable(resizable) -&gt; titanium" />
+                        <scope doc="Sets the title of a window." ilk="function" name="setTitle" returns="String" signature="setTitle(title) -&gt; titanium" />
+                        <scope doc="Sets whether a window is top most (above other windows)." ilk="function" name="setTopMost" returns="String" signature="setTopMost(topmost) -&gt; titanium" />
+                        <scope doc="Sets a window's transparency value." ilk="function" name="setTransparency" returns="String" signature="setTransparency(url) -&gt; titanium" />
+                        <scope doc="Sets the url for a window." ilk="function" name="setURL" returns="String" signature="setURL(url) -&gt; titanium" />
+                        <scope doc="Sets whether a window should use system chrome." ilk="function" name="setUsingChrome" returns="String" signature="setUsingChrome(chrome) -&gt; titanium" />
+                        <scope doc="Sets the visibility of the window." ilk="function" name="setVisible" returns="String" signature="setVisible(visible) -&gt; titanium" />
+                        <scope doc="Sets a window's width." ilk="function" name="setWidth" returns="String" signature="setWidth(width) -&gt; titanium" />
+                        <scope doc="Set a UI.UserWindow's horizontal (X-axis) position on the screen. The origin of the screen is considered to be the top-left on all platforms." ilk="function" name="setX" returns="String" signature="setX(x) -&gt; titanium" />
+                        <scope doc="Set a UI.UserWindow's vertical (Y-axis) position on the screen. The origin of the screen is considered to be the top-left on all platforms." ilk="function" name="setY" returns="String" signature="setY(y) -&gt; titanium" />
+                        <scope doc="Shows a window." ilk="function" name="show" returns="String" signature="show() -&gt; titanium" />
+                        <scope doc="Show a UI.UserWindow's web inspector." ilk="function" name="showInspector" returns="String" signature="showInspector(console) -&gt; titanium" />
+                        <scope doc="Unfocuses a window." ilk="function" name="unfocus" returns="String" signature="unfocus() -&gt; titanium" />
+                        <scope doc="Unmaximizes a window." ilk="function" name="unmaximize" returns="String" signature="unmaximize() -&gt; titanium" />
+                        <scope doc="Unminimizes a window." ilk="function" name="unminimize" returns="String" signature="unminimize() -&gt; titanium" />
+                        <variable citdl="Boolean" name="isDialog" />
+                    </scope>
+                </scope>
+                <!-- Titanium.UpdateManager module -->
+                <scope ilk="class" name="UpdateManager" doc="A module for dealing with application and component updates.">
+                    <scope doc="Check the update service for a new version." ilk="function" name="cancelMonitor" returns="String" signature="cancelMonitor(id) -&gt; titanium" />
+                    <scope doc="Install an application update received from update monitor. This method will cause the process to first be restarted for the update to begin." ilk="function" name="installAppUpdate" returns="String" signature="installAppUpdate(updateSpec) -&gt; titanium" />
+                    <scope doc="Check the update service for a new version." ilk="function" name="startMonitor" returns="Number" signature="startMonitor(component, callback, interval) -&gt; titanium" />
+                    <variable citdl="Function" name="onupdate" />
+                </scope>
+                <!-- Titanium.Worker module -->
+                <scope ilk="class" name="Worker" doc="A module for creating Worker threads.">
+                    <scope doc="Create a worker thread instance." ilk="function" name="createWorker" returns="Titanium.Worker.Worker" signature="createWorker(source) -&gt; titanium" />
+                    <!-- Titanium.Worker.Worker object -->
+                    <scope ilk="class" name="Worker" doc="An object representing a Titanium Worker.">
+                        <scope doc="Post a message (async) into the worker thread's queue to be handled by onmessage." ilk="function" name="postMessage" returns="String" signature="postMessage(data) -&gt; titanium" />
+                        <scope doc="Start the worker thread." ilk="function" name="start" returns="String" signature="start() -&gt; titanium" />
+                        <scope doc="Terminate the worker thread. The thread can be restarted with Worker.start()." ilk="function" name="terminate" returns="String" signature="terminate() -&gt; titanium" />
+                    </scope>
+                </scope>
+                <!-- Titanium.Bytes object -->
+                <scope ilk="class" name="Bytes" doc="An object for holding arrays of bytes.">
+                    <scope doc="Return the character code (or byte value) at the given index in a Bytes." ilk="function" name="byteAt" returns="Number" signature="byteAt(index) -&gt; titanium" />
+                    <scope doc="Return a character representing a byte at the given index in a Bytes." ilk="function" name="charAt" returns="String" signature="charAt(index) -&gt; titanium" />
+                    <scope doc="Concatenate multiple Bytes and Strings into one Bytes." ilk="function" name="concat" returns="Bytes" signature="concat(...) -&gt; titanium" />
+                    <scope doc="Return the index of a String within this Bytes. The String will first be converted to UTF-8 before this method searches the Bytes object." ilk="function" name="indexOf" returns="Number" signature="indexOf(needle) -&gt; titanium" />
+                    <scope doc="Return the last index of a String within this Bytes. The String will first be converted to UTF-8 before this method searches the Bytes object." ilk="function" name="lastIndexOf" returns="Number" signature="lastIndexOf(needle) -&gt; titanium" />
+                    <scope doc="Split a bytes as if it were a String given a delimiter. The Bytes object is expected to contain a UTF-8 encoded String. That means that the first NUL character in the string will be the end of the string." ilk="function" name="split" returns="Array" signature="split(delimiter, limit) -&gt; titanium" />
+                    <scope doc="Return a substring of a Bytes given a start index and a length. This assumes that Bytes contains a UTF-8 string. This means that the first NUL character in the Bytes object will signify the end of the string. If no length index is given, return all characters from the start index to the end of the string." ilk="function" name="substr" returns="String" signature="substr(startIndex, length) -&gt; titanium" />
+                    <scope doc="Return a substring of a Bytes given a start index and end index. This assumes that Bytes contains a UTF-8 string. This means that the first NUL character in the Bytes object will signify the end of the string. If no end index is given, return all characters from the start index to the end of the string. If startIndex > endIndex, the indices are swapped." ilk="function" name="substring" returns="String" signature="substring(startIndex, endIndex) -&gt; titanium" />
+                    <scope doc="Convert characters in the Bytes to lower-case as if it it were a String. This method assumes that Bytes contains a UTF-8 string. This means that the first NUL character in the Bytes object will signify the end of the string." ilk="function" name="toLowerCase" returns="String" signature="toLowerCase() -&gt; titanium" />
+                    <scope doc="Return a string representation of a Byte object. This method assumes that Bytes contains a UTF-8 string. This means that the first NUL character in the Bytes object will signify the end of the string." ilk="function" name="toString" returns="String" signature="toString() -&gt; titanium" />
+                    <scope doc="Convert characters in the Bytes to upper-case as if it it were a String. This method assumes that Bytes contains a UTF-8 string. This means that the first NUL character in the Bytes object will signify the end of the string." ilk="function" name="toUpperCase" returns="String" signature="toUpperCase() -&gt; titanium" />
+                    <variable citdl="String" name="length" />
+                </scope>
+            </scope>
+            <scope classrefs="Titanium" ilk="class" name="Ti">
+            </scope>
+        </scope>
+    </file>
+</codeintel>
